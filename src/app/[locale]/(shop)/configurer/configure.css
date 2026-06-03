@@ -1,0 +1,262 @@
+.config-hero {
+    padding: 40px 0 60px;
+}
+
+.paths-grid {
+    display: grid;
+    grid-template-columns: 7fr 5fr;
+    gap: 48px;
+}
+
+.path-card {
+    background: var(--color-blanc);
+    border-radius: 0;
+    border: none;
+    box-shadow: none;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.path-card img {
+    width: 100%;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+    transition: transform 500ms ease-out;
+}
+
+.path-card:hover img {
+    transform: scale(1.03);
+}
+
+.path-card-body {
+    padding: 32px 0;
+}
+
+.path-card-body .mono {
+    margin-bottom: 8px;
+}
+
+.path-card-body h3 {
+    margin-bottom: 12px;
+}
+
+.path-card-body p {
+    margin-bottom: 24px;
+}
+
+j.mini-filter-section {
+    padding: 80px 0 120px;
+}
+
+.mini-filter {
+    max-width: 800px;
+}
+
+.mini-filter .filter-row {
+    margin-bottom: 32px;
+    opacity: 0;
+    transform: translateY(12px);
+    transition: opacity 500ms ease-out, transform 500ms ease-out;
+    pointer-events: none;
+    max-height: 0;
+    overflow: hidden;
+}
+
+.mini-filter .filter-row.visible {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+    max-height: 500px;
+    overflow: visible;
+}
+
+.mini-filter .filter-row-label {
+    font-family: 'PP Air Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #000000;
+    margin-bottom: 12px;
+    display: block;
+}
+
+.mini-filter .filter-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.mini-filter .filter-chip {
+    padding: 10px 20px;
+    background: var(--color-blanc);
+    border: 1.5px solid rgba(0, 0, 0, 0.08);
+    border-radius: 0;
+    cursor: pointer;
+    font-size: 15px;
+    color: var(--color-noir);
+    transition: border-color 500ms ease-out, background 500ms ease-out;
+    user-select: none;
+}
+
+.mini-filter .filter-chip:hover {
+    border-color: rgba(0, 0, 0, 0.2);
+}
+
+.mini-filter .filter-chip.selected {
+    border-color: var(--color-vert-persan);
+    background: var(--color-vert-cobalt);
+    color: var(--color-vert-persan);
+    font-weight: 600;
+}
+
+.mini-filter .filter-cta {
+    margin-top: 40px;
+    opacity: 0;
+    transform: translateY(12px);
+    transition: opacity 500ms ease-out, transform 500ms ease-out;
+    pointer-events: none;
+}
+
+.mini-filter .filter-cta.visible {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.wizard-fullscreen-placeholder {
+    padding: 120px 0;
+    text-align: center;
+    background: #EEEDE7;
+}
+
+.wizard-fullscreen-placeholder .placeholder-inner {
+    max-width: 560px;
+    margin: 0 auto;
+}
+
+.wizard-fullscreen-placeholder h2 {
+    margin-bottom: 16px;
+}
+
+.wizard-fullscreen-placeholder p {
+    font-size: 18px;
+    margin-bottom: 32px;
+    color: #000000;
+}
+
+/* Recap / wizard legacy styles kept */
+.wizard-section {
+    padding: 120px 0;
+}
+
+.recap-section {
+    padding: 0 0 120px;
+    display: none;
+}
+
+.recap-section.visible {
+    display: block;
+}
+
+.recap-box {
+    background: #EEEDE7;
+    border-left: 2px solid var(--color-vert-persan);
+    padding: 32px;
+    margin-bottom: 48px;
+}
+
+.recap-box h3 {
+    margin-bottom: 16px;
+    font-size: 1.25rem;
+}
+
+.recap-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.recap-list li {
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+    display: flex;
+    justify-content: space-between;
+    font-size: 18px;
+}
+
+.recap-list li:last-child {
+    border-bottom: none;
+}
+
+.recap-list .recap-label {
+    color: #000000;
+    font-family: 'PP Air Mono', monospace;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.recap-list .recap-value {
+    color: var(--color-noir);
+    font-weight: 500;
+    text-align: right;
+}
+
+.next-steps-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 48px;
+}
+
+.next-step-card {
+    text-align: left;
+}
+
+.next-step-card .step-num {
+    font-family: 'PP Air Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #000000;
+    margin-bottom: 12px;
+    display: block;
+}
+
+.next-step-card h4 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+.next-step-card p {
+    margin-bottom: 16px;
+    font-size: 18px;
+}
+
+@media (max-width: 1024px) {
+    .paths-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+
+    .next-steps-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+}
+
+@media (max-width: 768px) {
+    .config-hero {
+        padding: 20px 0 40px;
+    }
+
+    .mini-filter-section {
+        padding: 40px 0 80px;
+    }
+
+    .mini-filter .filter-chip {
+        padding: 8px 14px;
+        font-size: 14px;
+    }
+}

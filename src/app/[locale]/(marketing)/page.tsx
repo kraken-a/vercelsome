@@ -1,6 +1,5 @@
-import { redirect } from 'next/navigation';
+import ClientPage from '../(shop)/acheter/_client'
 
-export default async function HomePage({ params }: { params: Promise<{ locale: string }> }) {
-  const { locale } = await params;
-  redirect(`/${locale}/acheter`);
+export default function HomePage() {
+  return <ClientPage />
 }

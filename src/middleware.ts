@@ -2,7 +2,6 @@ import { NextResponse, NextRequest } from 'next/server'
 import createMiddleware from 'next-intl/middleware'
 import { routing } from './i18n/routing'
 import { isPublicPath } from './lib/auth-gate'
-import { verifyInviteToken } from './lib/auth-invite'
 
 const SUPPORTED_LOCALES = routing.locales as readonly string[]
 const DEFAULT_LOCALE = routing.defaultLocale
@@ -52,27 +51,11 @@ export default async function middleware(request: NextRequest) {
     const pathWithoutLocale = '/' + segments.slice(1).join('/')
 
     if (!isPublicPath(pathWithoutLocale)) {
-      const secret = process.env.INVITE_TOKEN_SECRET
-      if (!secret) {
-        // Refuse to serve if secret is unset — loud fail rather than silent allow.
-        console.error('[gate] INVITE_TOKEN_SECRET is not set — refusing request')
-        return new NextResponse('Service Unavailable: invite gate misconfigured', { status: 503 })
-      }
-
-      const tokenCookie = request.cookies.get('vercelsome_invite_token')
-      const valid = tokenCookie ? await verifyInviteToken(tokenCookie.value, secret) : false
-
-      if (!valid) {
-        if (tokenCookie) {
-          console.warn('[gate] invalid_token path=%s', pathname)
-        }
-        const landingUrl = new URL(`/${locale}/login`, request.url)
-        landingUrl.searchParams.set('next', pathname)
-        const response = NextResponse.redirect(landingUrl)
-        if (tokenCookie) {
-          // Clear the bad cookie so the browser doesn't keep sending it.
-          response.cookies.set('vercelsome_invite_token', '', { maxAge: 0, path: '/' })
-        }
+      const hasSession = request.cookies.has('session_id') || request.cookies.has('odoo_sid')
+      if (!hasSession) {
+        const loginUrl = new URL(`/${locale}/login`, request.url)
+        loginUrl.searchParams.set('next', pathname)
+        const response = NextResponse.redirect(loginUrl)
         response.headers.set(cspHeaderName, csp)
         return response
       }

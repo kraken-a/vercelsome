@@ -2,7 +2,7 @@
 import type { NextRequest } from 'next/server'
 import { resolveAllowedOrigin, verifyCsrfOrigin } from '../cors'
 
-function makeReq(method: string, headers: Record<string, string> = {}, pathname = '/api/vercelsome/v1/auth/login'): NextRequest {
+function makeReq(method: string, headers: Record<string, string> = {}, pathname = '/api/oaksome/v1/auth/login'): NextRequest {
   const h = new Headers(headers)
   return {
     method,

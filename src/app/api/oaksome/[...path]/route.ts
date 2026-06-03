@@ -11,7 +11,7 @@ const ODOO_BASE = ODOO_ROOT ? `${ODOO_ROOT}/api/oaksome` : ''
 
 if (!ODOO_BASE) {
   console.warn(
-    '[api/vercelsome] Missing Odoo base URL. Set ODOO_URL (preferred) or NEXT_PUBLIC_ODOO_URL.',
+    '[api/oaksome] Missing Odoo base URL. Set ODOO_URL (preferred) or NEXT_PUBLIC_ODOO_URL.',
   )
 }
 

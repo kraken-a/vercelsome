@@ -157,11 +157,11 @@ export default function EchantillonsPage() {
     fetch('/api/odoo/categories', { signal }).then(r => r.json()).then(data => { if (Array.isArray(data)) setCategories(data) }).catch(() => { })
     fetch('/api/odoo/spaces', { signal }).then(r => r.json()).then(data => { if (Array.isArray(data)) setSpaces(data) }).catch(() => { })
     fetch('/api/odoo/styles', { signal }).then(r => r.json()).then(data => { if (Array.isArray(data)) setStyles(data) }).catch(() => { })
-    fetch('/api/vercelsome/v1/kit/product', { signal }).then(r => r.json()).then(res => {
+    fetch('/api/oaksome/v1/kit/product', { signal }).then(r => r.json()).then(res => {
       const p = res?.data ?? res
       if (p?.id) { setKitProductId(p.id); setKitProductPrice(p.list_price ?? 100) }
     }).catch(() => { })
-    fetch('/api/vercelsome/v1/showroom/product', { signal }).then(r => r.json()).then(res => {
+    fetch('/api/oaksome/v1/showroom/product', { signal }).then(r => r.json()).then(res => {
       const p = res?.data ?? res
       if (p?.id) { setShowroomProductId(p.id); setShowroomProductPrice(p.list_price ?? 250) }
     }).catch(() => { })

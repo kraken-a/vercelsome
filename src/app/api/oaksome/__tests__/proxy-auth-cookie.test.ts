@@ -22,7 +22,7 @@ function makeNextRequest(path: string, method = 'POST', body = '{}') {
   // Use plain Request because NextRequest works in node env too.
   const { NextRequest } = jest.requireActual('next/server') as typeof import('next/server')
   const hasBody = method !== 'GET' && method !== 'HEAD'
-  return new NextRequest(`http://localhost/api/vercelsome/${path}`, {
+  return new NextRequest(`http://localhost/api/oaksome/${path}`, {
     method,
     headers: {
       'content-type': 'application/json',

@@ -27,7 +27,7 @@ function buildRequest(
       host: 'localhost:3000',
       ...headers,
     }),
-    nextUrl: { search: '', pathname: '/api/vercelsome/v1/products' } as URL,
+    nextUrl: { search: '', pathname: '/api/oaksome/v1/products' } as URL,
   } as unknown as NextRequest
 }
 

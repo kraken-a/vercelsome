@@ -1,9 +1,8 @@
-// Server-side: call Odoo directly using its own route prefix (/api/oaksome).
-// Browser-side: go through the Next.js proxy at /api/vercelsome (avoids CORS).
+// Server-side: calls Odoo directly. Browser-side: goes through Next.js proxy (avoids CORS).
 const BASE_URL = typeof window === 'undefined'
   ? (process.env.ODOO_URL || process.env.NEXT_PUBLIC_ODOO_URL || '')
   : (typeof location !== 'undefined' ? location.origin : '')
-const API_PREFIX = typeof window === 'undefined' ? '/api/oaksome/v1' : '/api/vercelsome/v1'
+const API_PREFIX = '/api/oaksome/v1'
 const FETCH_TIMEOUT_MS = 15_000
 export const CHECKOUT_TIMEOUT_MS = 60_000
 

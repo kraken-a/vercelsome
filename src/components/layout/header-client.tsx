@@ -150,7 +150,7 @@ export function HeaderClient({ typeItems, espaceItems, collectionItems }: Props)
     setSearchLoading(true)
     searchTimer.current = setTimeout(async () => {
       try {
-        const res = await fetch(`/api/vercelsome/v1/search?q=${encodeURIComponent(query)}`)
+        const res = await fetch(`/api/oaksome/v1/search?q=${encodeURIComponent(query)}`)
         const json = await res.json()
         const data = json.data ?? json
         setSearchProducts(data.products || [])

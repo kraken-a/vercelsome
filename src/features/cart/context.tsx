@@ -17,7 +17,7 @@ function odooLocale(uiLocale: string): string {
   return uiLocale === 'nl' ? 'nl_BE' : 'fr_BE'
 }
 
-const TVA_KEY = 'oaksome-tva-rate'
+const TVA_KEY = 'vercelsome-tva-rate'
 const DEFAULT_TVA = 0.21
 const EMPTY_CART: CartState = { items: [], totalItems: 0, subtotal: 0, tvaRate: DEFAULT_TVA }
 

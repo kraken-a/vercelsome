@@ -89,10 +89,10 @@ describe('resolveLocaleAlternates', () => {
 describe('buildMetadataBase', () => {
   it('returns a URL object from NEXT_PUBLIC_SITE_URL env var', () => {
     const original = process.env.NEXT_PUBLIC_SITE_URL
-    process.env.NEXT_PUBLIC_SITE_URL = 'https://oaksome.com'
+    process.env.NEXT_PUBLIC_SITE_URL = 'https://vercelsome.com'
     const result = buildMetadataBase()
     expect(result).toBeInstanceOf(URL)
-    expect(result.href).toBe('https://oaksome.com/')
+    expect(result.href).toBe('https://vercelsome.com/')
     process.env.NEXT_PUBLIC_SITE_URL = original
   })
 
@@ -119,7 +119,7 @@ describe('getPageMetadata', () => {
     const { getTranslations } = require('next-intl/server')
     ;(getTranslations as jest.Mock).mockResolvedValue((key: string) => {
       const fixtures: Record<string, string> = {
-        title: 'Oaksome — Sur mesure',
+        title: 'Vercelsome — Sur mesure',
         description: 'Mobilier encastré sur mesure en Belgique.',
       }
       return fixtures[key] ?? key

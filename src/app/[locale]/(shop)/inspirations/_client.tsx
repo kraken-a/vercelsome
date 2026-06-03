@@ -145,10 +145,10 @@ export default function InspirationsPage() {
             </button>
             <button
               className="inspo-filter-btn"
-              data-filter="oaksome"
-              onClick={(e) => filterInspo('oaksome', e.currentTarget)}
+              data-filter="vercelsome"
+              onClick={(e) => filterInspo('vercelsome', e.currentTarget)}
             >
-              {t('filter_oaksome')}
+              {t('filter_vercelsome')}
             </button>
             <button
               className="inspo-filter-btn"
@@ -193,7 +193,7 @@ export default function InspirationsPage() {
               ?.map((s) => s.name)
               .join(' · ')
 
-            if (item.source === 'oaksome') {
+            if (item.source === 'vercelsome') {
               const caseSlug = item.case_id?.slug ?? null
               return (
                 <Link
@@ -204,7 +204,7 @@ export default function InspirationsPage() {
                       : '/'
                   }
                   className="inspo-card"
-                  data-source="oaksome"
+                  data-source="vercelsome"
                 >
                   <div className="inspo-card-img">
                     <img src={imgSrc} alt={item.name} loading="lazy" />

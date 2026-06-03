@@ -14,8 +14,8 @@ import Assurance from '@/components/assurance/assurance'
 import './configure.css'
 
 const ALLOWED_ORIGINS = [
-    'https://oaksome.vercel.app',
-    'https://oaksome-client.vercel.app',
+    'https://vercelsome.vercel.app',
+    'https://vercelsome.vercel.app',
 ]
 
 const LOADER_HTML = (label: string) => `
@@ -96,7 +96,7 @@ export default function ConfigurerPage() {
     // Store so1_id silently for cart overlay SO2 flow + fetch SO1 info for technician mode
     useEffect(() => {
         if (!so1Id) return
-        localStorage.setItem('oaksome_so1_id', String(so1Id))
+        localStorage.setItem('vercelsome_so1_id', String(so1Id))
         getSo1Info(so1Id).then(r => {
             if (!r.success) return
             setSo1Name(r.data.name)
@@ -267,7 +267,7 @@ export default function ConfigurerPage() {
                         if (height) p.set('height', height)
                         if (depth) p.set('depth', depth)
                         const qs = p.toString()
-                        return `https://oaksome-client.vercel.app/${iframeLocale}/article${qs ? `?${qs}` : ''}`
+                        return `https://vercelsome.vercel.app/${iframeLocale}/article${qs ? `?${qs}` : ''}`
                     })()}
                     style={{width: '100%', height: '100%', border: 'none'}}
                     allow="fullscreen"
@@ -359,7 +359,7 @@ export default function ConfigurerPage() {
                 </div>
             </section>
             <Assurance/>
-            <Script src="/oaksome-web/src/js/event_listener.js" strategy="afterInteractive" />
+            <Script src="/vercelsome/src/js/event_listener.js" strategy="afterInteractive" />
         </main>
     )
 }

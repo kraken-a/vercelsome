@@ -379,7 +379,7 @@ export default function BookingPage() {
             </Link>
           </div>
           <p className="booking-disclaimer" style={{ marginTop: '1rem' }}>
-            {t('help')} <a href="mailto:info@oaksome.be">info@oaksome.be</a>
+            {t('help')} <a href="mailto:info@vercelsome.com">info@vercelsome.com</a>
           </p>
         </div>
       </div>

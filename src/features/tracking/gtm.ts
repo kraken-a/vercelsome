@@ -2,7 +2,7 @@
  * GTM dataLayer push helper.
  * All tracking events go through this function.
  * Pre-consent pushes are dropped (Consent Mode v2 default-denied).
- * Once Axeptio (or any CMP) sets window.__oaksomeConsent = { analytics: true, ads: true },
+ * Once Axeptio (or any CMP) sets window.__vercelsomeConsent = { analytics: true, ads: true },
  * pushes resume.
  */
 
@@ -19,7 +19,7 @@ type ConsentState = {
 declare global {
   interface Window {
     dataLayer?: DataLayerEvent[]
-    __oaksomeConsent?: ConsentState
+    __vercelsomeConsent?: ConsentState
   }
 }
 
@@ -32,7 +32,7 @@ const ALWAYS_ALLOWED_EVENTS = new Set([
 function consentGranted(eventName: string): boolean {
   if (typeof window === 'undefined') return false
   if (ALWAYS_ALLOWED_EVENTS.has(eventName)) return true
-  const c = window.__oaksomeConsent
+  const c = window.__vercelsomeConsent
   return Boolean(c?.analytics || c?.ads)
 }
 

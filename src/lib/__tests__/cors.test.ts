@@ -2,7 +2,7 @@
 import type { NextRequest } from 'next/server'
 import { resolveAllowedOrigin, verifyCsrfOrigin } from '../cors'
 
-function makeReq(method: string, headers: Record<string, string> = {}, pathname = '/api/oaksome/v1/auth/login'): NextRequest {
+function makeReq(method: string, headers: Record<string, string> = {}, pathname = '/api/vercelsome/v1/auth/login'): NextRequest {
   const h = new Headers(headers)
   return {
     method,
@@ -26,9 +26,9 @@ describe('resolveAllowedOrigin', () => {
     beforeEach(() => setEnv('production'))
 
     it('accepts canonical prod origins', () => {
-      expect(resolveAllowedOrigin('https://oaksome.com')).toBe('https://oaksome.com')
-      expect(resolveAllowedOrigin('https://www.oaksome.com')).toBe('https://www.oaksome.com')
-      expect(resolveAllowedOrigin('https://cdn.oaksome.com')).toBe('https://cdn.oaksome.com')
+      expect(resolveAllowedOrigin('https://vercelsome.com')).toBe('https://vercelsome.com')
+      expect(resolveAllowedOrigin('https://www.vercelsome.com')).toBe('https://www.vercelsome.com')
+      expect(resolveAllowedOrigin('https://cdn.vercelsome.com')).toBe('https://cdn.vercelsome.com')
     })
 
     it('rejects localhost in production', () => {
@@ -54,7 +54,7 @@ describe('resolveAllowedOrigin', () => {
     })
 
     it('still accepts prod origins (so we can hit dev against prod-like setups)', () => {
-      expect(resolveAllowedOrigin('https://oaksome.com')).toBe('https://oaksome.com')
+      expect(resolveAllowedOrigin('https://vercelsome.com')).toBe('https://vercelsome.com')
     })
 
     it('rejects non-http localhost (https on localhost is unused, treat as suspicious)', () => {
@@ -100,7 +100,7 @@ describe('verifyCsrfOrigin', () => {
 
   it('accepts POST from prod origin via Referer header in prod', () => {
     Object.defineProperty(process.env, 'NODE_ENV', { value: 'production', configurable: true })
-    expect(verifyCsrfOrigin(makeReq('POST', { referer: 'https://oaksome.com/fr/login' }))).toBe(true)
+    expect(verifyCsrfOrigin(makeReq('POST', { referer: 'https://vercelsome.com/fr/login' }))).toBe(true)
   })
 
   it('rejects POST from foreign origin', () => {

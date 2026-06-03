@@ -27,7 +27,7 @@ export async function redeemInviteCode(
 
   const token = await mintInviteToken(secret)
   const cookieStore = await cookies()
-  cookieStore.set('oaksome_invite_token', token, {
+  cookieStore.set('vercelsome_invite_token', token, {
     httpOnly: true,
     secure: true,
     sameSite: 'lax',

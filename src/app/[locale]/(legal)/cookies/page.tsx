@@ -142,15 +142,15 @@ export default async function CookiesPage() {
               <p>{t('sec6_intro')}</p>
               <p>
                 <strong>{t('sec6_dpo_title')}</strong><br />
-                Oaksome Belgium<br />
-                {t('sec6_email_label')} privacy@oaksome.be<br />
+                Vercelsome Belgium<br />
+                {t('sec6_email_label')} privacy@vercelsome.com<br />
                 {t('sec6_address_label')} Rue de la Loi 1, 1000 Bruxelles, Belgique
               </p>
               <p>{t('sec6_dispute')} <a href="https://www.autoriteprotectiondonnees.be" style={{ color: 'var(--teal)' }} target="_blank" rel="noopener noreferrer">www.autoriteprotectiondonnees.be</a></p>
             </div>
 
             <div style={{ textAlign: 'center', marginTop: '3rem', paddingTop: '2rem', borderTop: '1px solid var(--border)' }}>
-              <p style={{ fontSize: '0.85rem' }}>Oaksome Belgium — TVA BE 1026.968.692 — Rue Roberts Jones 72, 1180 Uccle</p>
+              <p style={{ fontSize: '0.85rem' }}>Vercelsome Belgium — TVA BE 1026.968.692 — Rue Roberts Jones 72, 1180 Uccle</p>
             </div>
           </div>
         </div>

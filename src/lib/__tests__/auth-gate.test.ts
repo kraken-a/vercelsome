@@ -155,7 +155,7 @@ function makeRequest(pathname: string, cookieValue?: string) {
   const url = `http://localhost${pathname}`
   const headers: Record<string, string> = { origin: 'http://localhost' }
   if (cookieValue !== undefined) {
-    headers['cookie'] = `oaksome_invite_token=${cookieValue}`
+    headers['cookie'] = `vercelsome_invite_token=${cookieValue}`
   }
   return new NextRequest(url, { method: 'GET', headers })
 }
@@ -204,7 +204,7 @@ describe('middleware auth-gate behaviour', () => {
     expect(res.status).toBe(307)
     // The Set-Cookie header should clear the cookie by setting Max-Age=0.
     const setCookie = res.headers.get('set-cookie') || ''
-    expect(setCookie).toMatch(/oaksome_invite_token=/)
+    expect(setCookie).toMatch(/vercelsome_invite_token=/)
     expect(setCookie).toMatch(/[Mm]ax-[Aa]ge=0/)
   })
 

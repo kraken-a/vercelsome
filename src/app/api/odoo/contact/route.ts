@@ -12,7 +12,7 @@ export async function POST(request: NextRequest) {
 
   let res: Response
   try {
-    res = await fetch(`${ODOO_URL}/api/oaksome/v1/contact`, {
+    res = await fetch(`${ODOO_URL}/api/vercelsome/v1/contact`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
       body: JSON.stringify(body),

@@ -71,7 +71,7 @@ function LoginInner() {
       email: result.data.email,
       isPro: result.data.is_pro,
     })
-    document.cookie = 'oaksome_auth=1; path=/; SameSite=Lax'
+    document.cookie = 'vercelsome_auth=1; path=/; SameSite=Lax'
     trackLogin()
     await grantInviteToken()
     router.push(next)
@@ -81,7 +81,7 @@ function LoginInner() {
     <div className="login-root">
       <header className="login-header">
         <Link href="/">
-          <img src="/images/oaksome-logo.svg" alt="Oaksome" style={{ height: '20px' }} />
+          <img src="/images/oaksome-logo.svg" alt="Vercelsome" style={{ height: '20px' }} />
         </Link>
         <div className="login-header-meta">
           <div className="country-selectors">

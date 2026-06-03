@@ -7,7 +7,7 @@ const SRC = readFileSync(PAGE_PATH, 'utf8')
 
 describe('Configurer iframe URL (TASK-015)', () => {
   it('does not hardcode the /en/ locale', () => {
-    expect(SRC).not.toMatch(/oaksome-client\.vercel\.app\/en\//)
+    expect(SRC).not.toMatch(/vercelsome.vercel.app\/en\//)
   })
 
   it('does not emit a buggy `?=` empty query', () => {
@@ -19,6 +19,6 @@ describe('Configurer iframe URL (TASK-015)', () => {
   })
 
   it('builds the iframe URL via a `${locale}` interpolation', () => {
-    expect(SRC).toMatch(/oaksome-client\.vercel\.app\/\$\{locale\}\/article/)
+    expect(SRC).toMatch(/vercelsome.vercel.app\/\$\{locale\}\/article/)
   })
 })

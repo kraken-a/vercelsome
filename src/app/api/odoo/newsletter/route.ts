@@ -10,7 +10,7 @@ export async function POST(request: NextRequest) {
     const body = await request.json()
     let res: Response
     try {
-        res = await fetch(`${ODOO_URL}/api/oaksome/v1/newsletter/subscribe`, {
+        res = await fetch(`${ODOO_URL}/api/vercelsome/v1/newsletter/subscribe`, {
             method: 'POST',
 
             headers: {'Content-Type': 'application/json', Accept: 'application/json'},

@@ -4,7 +4,7 @@ import { createContext, useCallback, useEffect, useState } from 'react'
 import type { ReactNode } from 'react'
 import { getItem, setItem } from '@/lib/store/storage'
 
-const STORAGE_KEY = 'oaksome-country'
+const STORAGE_KEY = 'vercelsome-country'
 
 export type Country = 'BE' | 'LU'
 

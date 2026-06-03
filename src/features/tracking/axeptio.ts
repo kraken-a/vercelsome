@@ -3,12 +3,12 @@
  * consumed by `next/script` in `app/[locale]/layout.tsx`.
  *
  * The bridge listens for Axeptio's `axeptio_authorized_vendors` event and
- * flips `window.__oaksomeConsent`, which `features/tracking/gtm.ts`
+ * flips `window.__vercelsomeConsent`, which `features/tracking/gtm.ts`
  * already consults before pushing dataLayer events.
  */
 
-export const COOKIES_VERSION_FR = 'oaksome-fr'
-export const COOKIES_VERSION_NL = 'oaksome-nl'
+export const COOKIES_VERSION_FR = 'vercelsome-fr'
+export const COOKIES_VERSION_NL = 'vercelsome-nl'
 
 const CLIENT_ID_PATTERN = /^[a-zA-Z0-9-]+$/
 
@@ -40,7 +40,7 @@ export function axeptioBridgeSnippet(): string {
     `sdk.on("cookies:complete", function(choices){`,
     `var analytics = choices && choices.google_analytics === true;`,
     `var ads = !!(choices && (choices.google_ads === true || choices.facebook_pixel === true));`,
-    `window.__oaksomeConsent = { analytics: analytics, ads: ads };`,
+    `window.__vercelsomeConsent = { analytics: analytics, ads: ads };`,
     `window.dataLayer = window.dataLayer || [];`,
     `window.dataLayer.push({event:"axeptio_authorized_vendors",analytics:analytics,ads:ads});`,
     `});`,

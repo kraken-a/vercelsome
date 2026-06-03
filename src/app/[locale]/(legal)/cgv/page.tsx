@@ -99,7 +99,7 @@ export default async function CGVPage() {
             </div>
 
             <div style={{ textAlign: 'center', marginTop: '3rem', paddingTop: '2rem', borderTop: '1px solid var(--border)' }}>
-              <p style={{ fontSize: '0.85rem' }}>Oaksome Belgium — TVA BE 1026.968.692 — Rue Roberts Jones 72, 1180 Uccle</p>
+              <p style={{ fontSize: '0.85rem' }}>Vercelsome Belgium — TVA BE 1026.968.692 — Rue Roberts Jones 72, 1180 Uccle</p>
             </div>
           </div>
         </div>

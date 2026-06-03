@@ -162,7 +162,7 @@ export default function CheckoutPage() {
         if (!confirmRes.success) throw new Error(confirmRes.error)
         orderName = confirmRes.data.order_name
       } else {
-        // Items are already in oaksome.cart.item (added by cart context via /cart/add).
+        // Items are already in vercelsome.cart.item (added by cart context via /cart/add).
         // Call checkout-url directly — no need to re-sync.
         const urlRes = await getCheckoutUrl(cart.tvaRate === 0.06)
         if (!urlRes.success) throw new Error(urlRes.error)
@@ -175,7 +175,7 @@ export default function CheckoutPage() {
       }
       // Snapshot cart before Odoo clears it — success page reads this for purchase tracking.
       try {
-        sessionStorage.setItem('oaksome_purchase_cart', JSON.stringify({ items: cart.items, subtotal: cart.subtotal }))
+        sessionStorage.setItem('vercelsome_purchase_cart', JSON.stringify({ items: cart.items, subtotal: cart.subtotal }))
       } catch {}
       const qs = new URLSearchParams()
       if (orderId) qs.set('order', String(orderId))

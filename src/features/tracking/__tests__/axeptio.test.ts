@@ -11,7 +11,7 @@ describe('axeptio helpers', () => {
   describe('isValidAxeptioClientId', () => {
     it('accepts alphanumeric and dashes', () => {
       expect(isValidAxeptioClientId('abc-123-DEF')).toBe(true)
-      expect(isValidAxeptioClientId('oaksome')).toBe(true)
+      expect(isValidAxeptioClientId('vercelsome')).toBe(true)
     })
 
     it.each([
@@ -31,14 +31,14 @@ describe('axeptio helpers', () => {
   })
 
   describe('cookiesVersionForLocale', () => {
-    it('maps fr → oaksome-fr', () => {
+    it('maps fr → vercelsome-fr', () => {
       expect(cookiesVersionForLocale('fr')).toBe(COOKIES_VERSION_FR)
-      expect(cookiesVersionForLocale('fr')).toBe('oaksome-fr')
+      expect(cookiesVersionForLocale('fr')).toBe('vercelsome-fr')
     })
 
-    it('maps nl → oaksome-nl', () => {
+    it('maps nl → vercelsome-nl', () => {
       expect(cookiesVersionForLocale('nl')).toBe(COOKIES_VERSION_NL)
-      expect(cookiesVersionForLocale('nl')).toBe('oaksome-nl')
+      expect(cookiesVersionForLocale('nl')).toBe('vercelsome-nl')
     })
 
     it('falls back to FR for unknown locales', () => {
@@ -49,20 +49,20 @@ describe('axeptio helpers', () => {
 
   describe('axeptioInitSnippet', () => {
     it('returns a script body containing clientId and cookiesVersion', () => {
-      const out = axeptioInitSnippet('abc-123', 'oaksome-fr')
+      const out = axeptioInitSnippet('abc-123', 'vercelsome-fr')
       expect(out).toContain('clientId: "abc-123"')
-      expect(out).toContain('cookiesVersion: "oaksome-fr"')
+      expect(out).toContain('cookiesVersion: "vercelsome-fr"')
       expect(out).toContain('static.axept.io/sdk.js')
     })
 
     it('returns empty string when clientId is invalid (fail closed)', () => {
-      expect(axeptioInitSnippet('', 'oaksome-fr')).toBe('')
-      expect(axeptioInitSnippet('has space', 'oaksome-fr')).toBe('')
-      expect(axeptioInitSnippet('inj"ect', 'oaksome-fr')).toBe('')
+      expect(axeptioInitSnippet('', 'vercelsome-fr')).toBe('')
+      expect(axeptioInitSnippet('has space', 'vercelsome-fr')).toBe('')
+      expect(axeptioInitSnippet('inj"ect', 'vercelsome-fr')).toBe('')
     })
 
     it('never contains a closing script tag', () => {
-      const out = axeptioInitSnippet('abc-123', 'oaksome-fr')
+      const out = axeptioInitSnippet('abc-123', 'vercelsome-fr')
       expect(out).not.toMatch(/<\/script/i)
     })
   })
@@ -75,8 +75,8 @@ describe('axeptio helpers', () => {
       expect(snippet).toContain('axeptio_authorized_vendors')
     })
 
-    it('writes window.__oaksomeConsent', () => {
-      expect(snippet).toContain('__oaksomeConsent')
+    it('writes window.__vercelsomeConsent', () => {
+      expect(snippet).toContain('__vercelsomeConsent')
     })
 
     it('does not write back to Axeptio (read-only of choices)', () => {

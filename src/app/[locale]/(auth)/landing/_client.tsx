@@ -90,7 +90,7 @@ export default function LandingPage() {
       <div className="landing-root">
         <header className="landing-header">
           <Link href="/">
-            <img src="/images/oaksome-logo.svg" alt="Oaksome" style={{ height: '20px' }} />
+            <img src="/images/oaksome-logo.svg" alt="Vercelsome" style={{ height: '20px' }} />
           </Link>
           <div className="landing-header-meta">
             <div className="country-selectors" id="countrySelectors">

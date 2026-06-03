@@ -6,7 +6,7 @@ const TESTIMONIALS = [
   {
     id: 1,
     img: '/images/stock/oaksome-v8-dressing-vecu.jpg',
-    text: '« Notre dressing sur mesure dépasse toutes nos attentes. Chaque centimètre est utilisé de façon intelligente, et la qualité de fabrication est vraiment remarquable. L&apos;équipe Oaksome nous a accompagnés du premier contact jusqu&apos;à la pose. »',
+    text: '« Notre dressing sur mesure dépasse toutes nos attentes. Chaque centimètre est utilisé de façon intelligente, et la qualité de fabrication est vraiment remarquable. L&apos;équipe Vercelsome nous a accompagnés du premier contact jusqu&apos;à la pose. »',
     name: 'Sophie & Thomas D.',
     location: 'Bruxelles, Belgique',
     case: 'Dressing — Collection Satori',
@@ -24,7 +24,7 @@ const TESTIMONIALS = [
   {
     id: 3,
     img: '/images/stock/oaksome-v8-salon-satori.jpg',
-    text: '« Après avoir visité plusieurs showrooms sans trouver ce qu&apos;on cherchait, Oaksome nous a permis de tout configurer en ligne et de visualiser le résultat. Le configurateur est vraiment bien pensé. »',
+    text: '« Après avoir visité plusieurs showrooms sans trouver ce qu&apos;on cherchait, Vercelsome nous a permis de tout configurer en ligne et de visualiser le résultat. Le configurateur est vraiment bien pensé. »',
     name: 'Julie & Luc M.',
     location: 'Luxembourg-Ville',
     case: 'Meuble TV — Collection Vista',

@@ -150,7 +150,7 @@ export function HeaderClient({ typeItems, espaceItems, collectionItems }: Props)
     setSearchLoading(true)
     searchTimer.current = setTimeout(async () => {
       try {
-        const res = await fetch(`/api/oaksome/v1/search?q=${encodeURIComponent(query)}`)
+        const res = await fetch(`/api/vercelsome/v1/search?q=${encodeURIComponent(query)}`)
         const json = await res.json()
         const data = json.data ?? json
         setSearchProducts(data.products || [])
@@ -290,7 +290,7 @@ export function HeaderClient({ typeItems, espaceItems, collectionItems }: Props)
       <div className={`mobile-menu${mobileOpen ? ' open' : ''}`}>
         <div className="mobile-menu-header">
           <Link href="/" onClick={() => setMobileOpen(false)}>
-            <Image src="/images/oaksome-logo.svg" alt="Oaksome" width={120} height={22} style={{ height: '22px', width: 'auto' }} />
+            <Image src="/images/oaksome-logo.svg" alt="Vercelsome" width={120} height={22} style={{ height: '22px', width: 'auto' }} />
           </Link>
           <button className="mobile-menu-close" onClick={() => setMobileOpen(false)} aria-label={t('nav.aria.menu_close')}>
             ×
@@ -548,7 +548,7 @@ export function HeaderClient({ typeItems, espaceItems, collectionItems }: Props)
 
         {/* Logo — centered */}
         <Link href="/" className="logo">
-          <Image src="/images/oaksome-logo.svg" alt="Oaksome" width={120} height={20} style={{ height: '20px', width: 'auto' }} />
+          <Image src="/images/oaksome-logo.svg" alt="Vercelsome" width={120} height={20} style={{ height: '20px', width: 'auto' }} />
         </Link>
 
         <div className="nav-right">

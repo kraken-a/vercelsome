@@ -5,13 +5,13 @@ import { mintInviteToken } from '@/lib/auth-invite'
 
 const INVITE_TOKEN_MAX_AGE = 60 * 60 * 24 * 30 // 30 days
 
-// path already contains 'v1' (from API_PREFIX in client.ts), so base stops at /api/oaksome
+// path already contains 'v1' (from API_PREFIX in client.ts), so base stops at /api/vercelsome
 const ODOO_ROOT = process.env.ODOO_URL || process.env.NEXT_PUBLIC_ODOO_URL || ''
-const ODOO_BASE = ODOO_ROOT ? `${ODOO_ROOT}/api/oaksome` : ''
+const ODOO_BASE = ODOO_ROOT ? `${ODOO_ROOT}/api/vercelsome` : ''
 
 if (!ODOO_BASE) {
   console.warn(
-    '[api/oaksome] Missing Odoo base URL. Set ODOO_URL (preferred) or NEXT_PUBLIC_ODOO_URL.',
+    '[api/vercelsome] Missing Odoo base URL. Set ODOO_URL (preferred) or NEXT_PUBLIC_ODOO_URL.',
   )
 }
 
@@ -104,7 +104,7 @@ async function proxy(req: NextRequest, path: string): Promise<NextResponse> {
     if (secret) {
       try {
         const inviteToken = await mintInviteToken(secret)
-        res.cookies.set('oaksome_invite_token', inviteToken, {
+        res.cookies.set('vercelsome_invite_token', inviteToken, {
           httpOnly: true,
           secure: isProd,
           sameSite: 'lax',

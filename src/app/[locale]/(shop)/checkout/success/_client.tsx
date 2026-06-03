@@ -40,8 +40,8 @@ export default function CheckoutSuccessPage() {
     // Live cart.items is empty by this point (cleared server-side).
     let snapshot: { items: Array<{ productId: number; price: number; quantity: number }>; subtotal: number } | null = null
     try {
-      snapshot = JSON.parse(sessionStorage.getItem('oaksome_purchase_cart') ?? 'null')
-      sessionStorage.removeItem('oaksome_purchase_cart')
+      snapshot = JSON.parse(sessionStorage.getItem('vercelsome_purchase_cart') ?? 'null')
+      sessionStorage.removeItem('vercelsome_purchase_cart')
     } catch {}
 
     if (orderRef && snapshot && snapshot.items.length > 0) {

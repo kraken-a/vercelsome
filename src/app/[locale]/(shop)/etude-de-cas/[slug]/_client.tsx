@@ -114,7 +114,7 @@ export default function EtudeDeCasPage() {
       </div>
 
       <div className="cs-header">
-        <span className="cs-label">{t('label_oaksome')}</span>
+        <span className="cs-label">{t('label_vercelsome')}</span>
         <h1>{project.name}</h1>
         <p className="cs-subtitle">{t('collection_prefix')} {extra}</p>
         <div className="cs-specs">
@@ -190,7 +190,7 @@ export default function EtudeDeCasPage() {
           <div style={{ position: 'relative' }}>
             <img
               src={hero}
-              alt="Projet Oaksome"
+              alt="Projet Vercelsome"
               loading="lazy"
               style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
             />
@@ -230,7 +230,7 @@ export default function EtudeDeCasPage() {
                   <img src={toImg(p.image)} alt={p.name} loading="lazy" />
                 </div>
                 <div className="cs-card-body">
-                  <span className="cs-label">{t('label_oaksome')}</span>
+                  <span className="cs-label">{t('label_vercelsome')}</span>
                   <h4>{p.name}</h4>
                   <p>{[p.style_ids[0]?.name, p.space_ids[0]?.name, p.city].filter(Boolean).join(' · ')}</p>
                 </div>

@@ -32,7 +32,7 @@ const nextConfig = {
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
     minimumCacheTTL: 86400,
     remotePatterns: (() => {
-      const patterns = [{ protocol: 'https', hostname: 'cdn.oaksome.com' }]
+      const patterns = [{ protocol: 'https', hostname: 'cdn.vercelsome.com' }]
       const odooUrl = process.env.ODOO_URL
       if (odooUrl) {
         try {
@@ -66,10 +66,10 @@ const nextConfig = {
             value: 'nosniff',
           },
           {
-            // Oaksome is the parent embedding oaksome-client.vercel.app in an
+            // Vercelsome is the parent embedding oaksome-client.vercel.app in an
             // iframe on /configurer. SAMEORIGIN is correct — we are the
             // embedder, not the embedee. If a partner site needs to embed
-            // Oaksome pages, add their origin to frame-ancestors in CSP instead
+            // Vercelsome pages, add their origin to frame-ancestors in CSP instead
             // (X-Frame-Options cannot list multiple origins).
             key: 'X-Frame-Options',
             value: 'SAMEORIGIN',

@@ -9,7 +9,7 @@ export function ProjectIdCapture() {
   useEffect(() => {
     const so1Id = searchParams.get('so1_id')
     if (so1Id && /^\d+$/.test(so1Id)) {
-      localStorage.setItem('oaksome_so1_id', so1Id)
+      localStorage.setItem('vercelsome_so1_id', so1Id)
     }
   }, [searchParams])
 

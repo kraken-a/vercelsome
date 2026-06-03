@@ -189,7 +189,7 @@ export default function Header() {
                 </div>
 
                 <Link href="/" className="logo">
-                    <img src="/images/oaksome-logo.svg" alt="Oaksome" style={{ height: '20px', width: 'auto' }} />
+                    <img src="/images/oaksome-logo.svg" alt="Vercelsome" style={{ height: '20px', width: 'auto' }} />
                 </Link>
 
                 <div className="nav-right">
@@ -264,7 +264,7 @@ export default function Header() {
             />
             <div className={`mobile-menu${mobileMenuOpen ? ' open' : ''}`}>
                 <div className="mobile-menu-header">
-                    <img src="/images/oaksome-logo.svg" alt="Oaksome" style={{ height: '18px' }} />
+                    <img src="/images/oaksome-logo.svg" alt="Vercelsome" style={{ height: '18px' }} />
                     <button className="mobile-menu-close" onClick={() => setMobileMenuOpen(false)}>&times;</button>
                 </div>
                 <div className="mobile-menu-body">
@@ -419,7 +419,7 @@ export default function Header() {
             </div>
             <div className={`help-chat${helpChatOpen ? ' open' : ''}`}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem' }}>
-                    <strong>Oaksome</strong>
+                    <strong>Vercelsome</strong>
                     <span onClick={() => setHelpChatOpen(false)} style={{ cursor: 'pointer', fontSize: '1.2rem' }}>&times;</span>
                 </div>
                 <p style={{ fontSize: '0.9rem', color: 'var(--text-light)' }}>

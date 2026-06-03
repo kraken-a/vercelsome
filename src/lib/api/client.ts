@@ -2,7 +2,7 @@
 const BASE_URL = typeof window === 'undefined'
   ? (process.env.ODOO_URL || process.env.NEXT_PUBLIC_ODOO_URL || '')
   : (typeof location !== 'undefined' ? location.origin : '')
-const API_PREFIX = '/api/oaksome/v1'
+const API_PREFIX = '/api/vercelsome/v1'
 const FETCH_TIMEOUT_MS = 15_000
 export const CHECKOUT_TIMEOUT_MS = 60_000
 

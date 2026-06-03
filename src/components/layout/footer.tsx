@@ -25,7 +25,7 @@ export async function Footer() {
           <div className="fs-topbar-right">
             <a href="tel:+352261080077">+352 26 10 80 77</a>
             <span className="fs-dash">—</span>
-            <a href="mailto:info@oaksome.com">info@oaksome.com</a>
+            <a href="mailto:info@vercelsome.com">info@vercelsome.com</a>
           </div>
         </div>
 

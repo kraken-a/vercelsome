@@ -179,7 +179,7 @@ export default function PanierPage() {
   const tracked = useRef(false)
 
   useEffect(() => {
-    const id = localStorage.getItem('oaksome_so1_id')
+    const id = localStorage.getItem('vercelsome_so1_id')
     setSo1Id(id)
     if (id) {
       getSo1Info(parseInt(id, 10)).then(r => {
@@ -202,7 +202,7 @@ export default function PanierPage() {
   }, [cart.items, cart.subtotal])
 
   async function handleCheckout() {
-    const rawSo1Id = localStorage.getItem('oaksome_so1_id')
+    const rawSo1Id = localStorage.getItem('vercelsome_so1_id')
     const so1IdNum = rawSo1Id ? parseInt(rawSo1Id, 10) : undefined
 
     // SO2 flow (technicien) : appel direct sans TVA step
@@ -212,7 +212,7 @@ export default function PanierPage() {
       try {
         const result = await getCheckoutUrl(undefined, so1IdNum)
         if (result.success && result.data.is_so2) {
-          localStorage.removeItem('oaksome_so1_id')
+          localStorage.removeItem('vercelsome_so1_id')
           const qs = new URLSearchParams()
           if (result.data.order_id) qs.set('order', String(result.data.order_id))
           if (result.data.order_name) qs.set('ref', result.data.order_name)

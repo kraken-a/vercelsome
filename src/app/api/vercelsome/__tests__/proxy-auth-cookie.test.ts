@@ -22,7 +22,7 @@ function makeNextRequest(path: string, method = 'POST', body = '{}') {
   // Use plain Request because NextRequest works in node env too.
   const { NextRequest } = jest.requireActual('next/server') as typeof import('next/server')
   const hasBody = method !== 'GET' && method !== 'HEAD'
-  return new NextRequest(`http://localhost/api/oaksome/${path}`, {
+  return new NextRequest(`http://localhost/api/vercelsome/${path}`, {
     method,
     headers: {
       'content-type': 'application/json',
@@ -92,7 +92,7 @@ describe('proxy route — invite token minting on login', () => {
     jest.clearAllMocks()
   })
 
-  it('mints oaksome_invite_token when path is v1/auth/login and upstream returns 200', async () => {
+  it('mints vercelsome_invite_token when path is v1/auth/login and upstream returns 200', async () => {
     process.env.INVITE_TOKEN_SECRET = SECRET
     process.env.ODOO_URL = 'http://odoo.test'
 
@@ -104,7 +104,7 @@ describe('proxy route — invite token minting on login', () => {
 
     expect(mintMock).toHaveBeenCalledWith(SECRET)
     const setCookie = res.headers.get('set-cookie') || ''
-    expect(setCookie).toContain('oaksome_invite_token=minted-invite-token')
+    expect(setCookie).toContain('vercelsome_invite_token=minted-invite-token')
   })
 
   it('does NOT mint token when upstream returns 401', async () => {
@@ -116,7 +116,7 @@ describe('proxy route — invite token minting on login', () => {
 
     expect(mintMock).not.toHaveBeenCalled()
     const setCookie = res.headers.get('set-cookie') || ''
-    expect(setCookie).not.toContain('oaksome_invite_token')
+    expect(setCookie).not.toContain('vercelsome_invite_token')
   })
 
   it('does NOT mint token when INVITE_TOKEN_SECRET is unset', async () => {
@@ -130,7 +130,7 @@ describe('proxy route — invite token minting on login', () => {
 
     expect(mintMock).not.toHaveBeenCalled()
     const setCookie = res.headers.get('set-cookie') || ''
-    expect(setCookie).not.toContain('oaksome_invite_token')
+    expect(setCookie).not.toContain('vercelsome_invite_token')
   })
 
   it('does NOT mint token for non-login paths even on 200', async () => {
@@ -142,6 +142,6 @@ describe('proxy route — invite token minting on login', () => {
 
     expect(mintMock).not.toHaveBeenCalled()
     const setCookie = res.headers.get('set-cookie') || ''
-    expect(setCookie).not.toContain('oaksome_invite_token')
+    expect(setCookie).not.toContain('vercelsome_invite_token')
   })
 })

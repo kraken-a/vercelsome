@@ -43,7 +43,7 @@ export default function AccountLayout({ children }: { children: React.ReactNode 
   async function handleLogout() {
     await logout()
     setUser(null)
-    document.cookie = 'oaksome_auth=; path=/; expires=Thu, 01 Jan 1970 00:00:00 UTC'
+    document.cookie = 'vercelsome_auth=; path=/; expires=Thu, 01 Jan 1970 00:00:00 UTC'
     router.push('/login')
   }
 

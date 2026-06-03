@@ -38,12 +38,12 @@ export default async function MentionsLegalesPage() {
             <div className="legal-section">
               <h3>{t('sec1_title')}</h3>
               <ul>
-                <li><strong>{t('sec1_item1_label')}</strong> Oaksome</li>
+                <li><strong>{t('sec1_item1_label')}</strong> Vercelsome</li>
                 <li><strong>{t('sec1_item2_label')}</strong> Fox Ventures SA</li>
                 <li><strong>{t('sec1_item3_label')}</strong> {t('sec1_item3_text')}</li>
                 <li><strong>{t('sec1_item4_label')}</strong> [À CONFIRMER]</li>
                 <li><strong>{t('sec1_item5_label')}</strong> BE 1026.968.692</li>
-                <li><strong>{t('sec1_item6_label')}</strong> info@oaksome.be</li>
+                <li><strong>{t('sec1_item6_label')}</strong> info@vercelsome.com</li>
               </ul>
             </div>
 

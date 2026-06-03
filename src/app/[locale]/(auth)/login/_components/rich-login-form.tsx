@@ -73,7 +73,7 @@ function RichLoginFormInner() {
       email: result.data.email,
       isPro: result.data.is_pro,
     })
-    document.cookie = 'oaksome_auth=1; path=/; SameSite=Lax'
+    document.cookie = 'vercelsome_auth=1; path=/; SameSite=Lax'
     trackLogin()
     router.push(next)
   }

@@ -90,7 +90,7 @@ export default async function AccessibilitePage() {
               <p>{t('sec6_p1')}</p>
               <p style={{ marginTop: '1rem' }}>
                 <strong>{t('sec6_email_label')}</strong>
-                <a href="mailto:accessibilite@oaksome.com">accessibilite@oaksome.com</a>
+                <a href="mailto:accessibilite@vercelsome.com">accessibilite@vercelsome.com</a>
                 <br />
                 <strong>{t('sec6_form_label')}</strong>
                 <Link href="/contact">{t('sec6_form_link')}</Link>

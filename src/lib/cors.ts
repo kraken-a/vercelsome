@@ -1,9 +1,9 @@
 import { type NextRequest, NextResponse } from 'next/server'
 
 const PROD_ALLOWED = [
-  'https://oaksome.com',
-  'https://www.oaksome.com',
-  'https://cdn.oaksome.com',
+  'https://vercelsome.com',
+  'https://www.vercelsome.com',
+  'https://cdn.vercelsome.com',
 ]
 
 // In dev, Next.js auto-picks the next free port (3001+) when 3000 is busy,

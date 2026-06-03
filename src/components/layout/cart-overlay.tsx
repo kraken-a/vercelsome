@@ -169,7 +169,7 @@ export function CartOverlay() {
   const hasTracked = useRef(false)
 
   useEffect(() => {
-    const id = localStorage.getItem('oaksome_so1_id')
+    const id = localStorage.getItem('vercelsome_so1_id')
     setProjectId(id)
     if (id) {
       getSo1Info(parseInt(id, 10)).then(r => {

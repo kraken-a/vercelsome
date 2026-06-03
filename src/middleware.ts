@@ -20,10 +20,10 @@ function buildCsp(nonce: string): string {
     "img-src 'self' data: blob: https:",
     "media-src 'self' https://backend.tecnibo.com",
     "font-src 'self' data: https://fonts.gstatic.com",
-    `connect-src 'self' https://cdn.oaksome.com${process.env.NEXT_PUBLIC_ODOO_URL ? ` ${process.env.NEXT_PUBLIC_ODOO_URL}` : ''} https://www.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com https://connect.facebook.net https://graph.facebook.com https://*.axept.io https://*.pinimg.com https://ct.pinterest.com`,
-    "frame-src 'self' https://oaksome-client.vercel.app",
+    `connect-src 'self' https://cdn.vercelsome.com${process.env.NEXT_PUBLIC_ODOO_URL ? ` ${process.env.NEXT_PUBLIC_ODOO_URL}` : ''} https://www.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com https://connect.facebook.net https://graph.facebook.com https://*.axept.io https://*.pinimg.com https://ct.pinterest.com`,
+    "frame-src 'self' https://vercelsome.vercel.app",
     "frame-ancestors 'self'",
-    "form-action 'self' https://cdn.oaksome.com",
+    "form-action 'self' https://cdn.vercelsome.com",
     "base-uri 'self'",
     "object-src 'none'",
     "upgrade-insecure-requests",
@@ -59,7 +59,7 @@ export default async function middleware(request: NextRequest) {
         return new NextResponse('Service Unavailable: invite gate misconfigured', { status: 503 })
       }
 
-      const tokenCookie = request.cookies.get('oaksome_invite_token')
+      const tokenCookie = request.cookies.get('vercelsome_invite_token')
       const valid = tokenCookie ? await verifyInviteToken(tokenCookie.value, secret) : false
 
       if (!valid) {
@@ -71,7 +71,7 @@ export default async function middleware(request: NextRequest) {
         const response = NextResponse.redirect(landingUrl)
         if (tokenCookie) {
           // Clear the bad cookie so the browser doesn't keep sending it.
-          response.cookies.set('oaksome_invite_token', '', { maxAge: 0, path: '/' })
+          response.cookies.set('vercelsome_invite_token', '', { maxAge: 0, path: '/' })
         }
         response.headers.set(cspHeaderName, csp)
         return response

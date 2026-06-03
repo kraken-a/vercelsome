@@ -34,7 +34,7 @@ export default function Footer() {
             <div className="fs-topbar-right">
               <a href="tel:+352261080077">+352 26 10 80 77</a>
               <span className="fs-dash">&mdash;</span>
-              <a href="mailto:info@oaksome.com">info@oaksome.com</a>
+              <a href="mailto:info@vercelsome.com">info@vercelsome.com</a>
             </div>
           </div>
 
@@ -130,7 +130,7 @@ export default function Footer() {
 
           <div className="fs-bottom">
             <div className="fs-watermark" aria-hidden="true">
-              OAKSOME
+              VERCELSOME
             </div>
             <div className="fs-bottom-right">
               <div className="fs-trustpilot">

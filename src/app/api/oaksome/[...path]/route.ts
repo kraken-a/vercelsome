@@ -66,9 +66,11 @@ async function proxy(req: NextRequest, path: string): Promise<NextResponse> {
   let odooRes: Response
   try {
     odooRes = await fetch(target, init)
-  } catch {
+  } catch (err) {
+    const msg = err instanceof Error ? `${err.name}: ${err.message}` : String(err)
+    console.error('[proxy] fetch failed target=%s error=%s', target, msg)
     return NextResponse.json(
-      { success: false, error: 'Odoo unreachable', code: 503 },
+      { success: false, error: 'Odoo unreachable', detail: msg, code: 503 },
       { status: 503 },
     )
   }

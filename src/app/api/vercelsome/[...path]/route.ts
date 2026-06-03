@@ -5,9 +5,9 @@ import { mintInviteToken } from '@/lib/auth-invite'
 
 const INVITE_TOKEN_MAX_AGE = 60 * 60 * 24 * 30 // 30 days
 
-// path already contains 'v1' (from API_PREFIX in client.ts), so base stops at /api/vercelsome
+// Odoo backend routes are registered under /api/oaksome regardless of this app's name
 const ODOO_ROOT = process.env.ODOO_URL || process.env.NEXT_PUBLIC_ODOO_URL || ''
-const ODOO_BASE = ODOO_ROOT ? `${ODOO_ROOT}/api/vercelsome` : ''
+const ODOO_BASE = ODOO_ROOT ? `${ODOO_ROOT}/api/oaksome` : ''
 
 if (!ODOO_BASE) {
   console.warn(

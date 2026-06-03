@@ -10,11 +10,40 @@
  * visitors are redirected to `/{locale}/landing`.
  */
 export const PUBLIC_PATTERNS: readonly string[] = [
+  // Auth
   '/login',
   '/password-recover',
   '/password-reset',
-  '/configurer',
   '/register',
+  // Public catalog
+  '/',
+  '/acheter',
+  '/produit',
+  '/collections',
+  '/collection',
+  '/espaces',
+  '/espace',
+  '/gamme',
+  '/inspirations',
+  '/configurer',
+  '/echantillons',
+  '/etude-de-cas',
+  '/etudes-de-cas',
+  // Marketing & legal
+  '/a-propos',
+  '/comment-ca-marche',
+  '/contact',
+  '/engagements',
+  '/faq',
+  '/cgv',
+  '/cookies',
+  '/mentions-legales',
+  '/garantie',
+  '/livraison',
+  '/accessibilite',
+  '/prise-mesures',
+  '/return',
+  '/tva-6',
 ]
 
 /**
@@ -27,7 +56,6 @@ export function isPublicPath(pathWithoutLocale: string): boolean {
   if (typeof pathWithoutLocale !== 'string' || pathWithoutLocale.length === 0) {
     return false
   }
-  if (pathWithoutLocale === '/') return false
   return PUBLIC_PATTERNS.some(
     (pattern) =>
       pathWithoutLocale === pattern ||

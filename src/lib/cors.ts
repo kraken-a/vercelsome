@@ -4,6 +4,9 @@ const PROD_ALLOWED = [
   'https://vercelsome.com',
   'https://www.vercelsome.com',
   'https://cdn.vercelsome.com',
+  // Vercel deployment URLs injected at build time
+  ...(process.env.NEXT_PUBLIC_SITE_URL ? [process.env.NEXT_PUBLIC_SITE_URL] : []),
+  ...(process.env.VERCEL_URL ? [`https://${process.env.VERCEL_URL}`] : []),
 ]
 
 // In dev, Next.js auto-picks the next free port (3001+) when 3000 is busy,

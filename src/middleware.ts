@@ -66,7 +66,7 @@ export default async function middleware(request: NextRequest) {
         if (tokenCookie) {
           console.warn('[gate] invalid_token path=%s', pathname)
         }
-        const landingUrl = new URL(`/${locale}/landing`, request.url)
+        const landingUrl = new URL(`/${locale}/login`, request.url)
         landingUrl.searchParams.set('next', pathname)
         const response = NextResponse.redirect(landingUrl)
         if (tokenCookie) {

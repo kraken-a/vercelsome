@@ -10,7 +10,6 @@
  * visitors are redirected to `/{locale}/landing`.
  */
 export const PUBLIC_PATTERNS: readonly string[] = [
-  '/landing',
   '/login',
   '/password-recover',
   '/password-reset',

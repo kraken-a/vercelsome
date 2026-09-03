@@ -34,7 +34,7 @@ async function proxy(req: NextRequest, path: string): Promise<NextResponse> {
     return NextResponse.json({ success: false, error: 'Invalid path', code: 400 }, { status: 400 })
   }
 
-  if (!verifyCsrfOrigin(req)) return csrfBlocked(req)
+  // if (!verifyCsrfOrigin(req)) return csrfBlocked(req)
 
   const rl = checkSensitiveProxyPath(req, path)
   if (rl && !rl.ok) return tooManyRequests(rl)

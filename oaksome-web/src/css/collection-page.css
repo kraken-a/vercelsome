@@ -1,0 +1,677 @@
+/* ─── Premium design overrides ─── */
+/* R1: Section padding min 120px */
+/*section { padding-top: 120px !important; padding-bottom: 120px !important; }*/
+/* R2: Body text min 18px */
+body {
+    font-size: 18px;
+}
+
+p, td, li {
+    font-size: 1.125rem;
+}
+
+/* R5: No colored backgrounds except CTA buttons */
+.quiz-teaser, section[style*="background:var(--beige)"] {
+    background: transparent !important;
+}
+
+/* R8: Transitions 500ms */
+*, *::before, *::after {
+    transition-duration: 500ms !important;
+}
+
+/* R9: No visible borders between sections */
+section {
+    border: none !important;
+}
+
+.band {
+    border: none !important;
+}
+
+/* R10: Labels = plain text */
+.mono {
+    text-transform: none;
+    letter-spacing: 0;
+    font-size: 1rem;
+}
+
+/* ─── Listing collections — gabarit Figma « Nos Styles » (4346:23111) ─── */
+.coll-hero {
+    text-align: center;
+}
+
+.cat-hero {
+    text-align: center;
+    padding: clamp(40px, 6vw, 72px) 0 0;
+}
+
+.cat-hero h1 {
+    font-family: "Yet Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: clamp(2rem, 4vw, 2.125rem);
+    line-height: 1.08;
+    letter-spacing: -0.03em;
+    color: var(--color-noir, #000);
+    margin: 0 auto;
+    max-width: 860px;
+}
+
+.cat-hero p {
+    max-width: 620px;
+    margin: 1.25rem auto 0;
+    color: var(--color-beige-fonce, #696761);
+    font-size: 1.05rem;
+    line-height: 1.6;
+}
+.bento-section {
+    background: var(--beige);
+}
+
+
+.coll-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+}
+
+.coll-card {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+}
+
+.coll-card-media {
+    overflow: hidden;
+}
+
+.coll-card-media img {
+    width: 100%;
+    aspect-ratio: 3/2;
+    object-fit: cover;
+    display: block;
+    transition: transform 700ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.coll-card:hover .coll-card-media img {
+    transform: scale(1.04);
+}
+
+.coll-card-foot {
+    padding: 16px 4px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.coll-card-name {
+    font-family: "Yet Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: clamp(1.25rem, 2vw, 1.875rem);
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+    color: var(--dark);
+}
+
+.coll-card-tag {
+    font-family: "Yet Grotesk", sans-serif;
+    font-weight: 400;
+    font-size: 0.95rem;
+    color: #696761;
+    line-height: 1.4;
+}
+
+@media (max-width: 768px) {
+    .coll-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ─── Comparateur (Stitch V9) ─── */
+.compare-section {
+    background: #fff;
+}
+
+.compare-label {
+    font-family: 'PP Air Mono', monospace;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--teal);
+    margin-bottom: 16px;
+    display: block;
+}
+
+.compare-title {
+    font-size: clamp(36px, 5vw, 60px);
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    margin: 0 0 48px;
+    color: var(--dark);
+    line-height: 1.05;
+}
+
+.compare-table-wrap {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.compare-table {
+    width: 100%;
+    min-width: 1000px;
+    border-collapse: collapse;
+}
+
+.compare-table thead tr {
+    border-top: 2px solid var(--dark);
+}
+
+.compare-table thead th {
+    padding: 32px 24px;
+    text-align: left;
+    width: 20%;
+    vertical-align: bottom;
+}
+
+.compare-table thead th:first-child {
+    /* empty corner cell */
+}
+
+.compare-table thead th a {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--teal);
+    text-decoration: none;
+    transition: opacity 500ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.compare-table thead th a:hover {
+    opacity: 0.7;
+}
+
+.compare-table tbody td {
+    padding: 32px 24px;
+    font-size: 18px;
+    line-height: 1.5;
+    color: var(--text);
+    vertical-align: top;
+}
+
+.compare-table tbody td:first-child {
+    font-family: 'PP Air Mono', monospace;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #000000;
+    white-space: nowrap;
+    font-weight: 400;
+}
+
+.compare-table tbody tr.compare-row-alt {
+    background: rgba(246, 245, 240, 0.3);
+}
+
+.compare-table tbody tr:last-child {
+    border-bottom: 2px solid var(--dark);
+}
+
+.compare-table tbody td.compare-price {
+    font-family: 'PP Air Mono', monospace;
+    font-size: 16px;
+}
+
+.compare-table tfoot td {
+    padding: 40px 24px;
+    border: none;
+}
+
+.compare-table tfoot a {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--teal);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: transform 500ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.compare-table tfoot a:hover {
+    transform: translateX(4px);
+}
+
+.compare-table tfoot a svg {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+}
+
+/* Visual Context Bento */
+.compare-bento {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 32px;
+    margin-top: 0;
+}
+
+@media (min-width: 769px) {
+    .compare-bento {
+        grid-template-columns: 8fr 4fr;
+        height: 600px;
+    }
+}
+
+.compare-bento-main {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.compare-bento-main img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 700ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.compare-bento-main:hover img {
+    transform: scale(1.05);
+}
+
+.compare-bento-caption {
+    position: absolute;
+    bottom: 32px;
+    left: 32px;
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(8px);
+    padding: 16px 24px;
+}
+
+.compare-bento-caption .compare-label {
+    margin-bottom: 4px;
+    font-size: 10px;
+}
+
+.compare-bento-caption p {
+    font-size: 20px;
+    font-weight: 700;
+    margin: 0;
+    color: var(--dark);
+}
+
+.compare-bento-side {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    gap: 32px;
+}
+
+.compare-bento-img {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.compare-bento-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 700ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.compare-bento-img:hover img {
+    transform: scale(1.05);
+}
+
+.compare-bento-cta {
+    background: var(--teal);
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: var(--mint);
+}
+
+.compare-bento-cta svg {
+    width: 36px;
+    height: 36px;
+    color: var(--mint);
+}
+
+.compare-bento-cta h3 {
+    font-size: 24px;
+    font-weight: 700;
+    margin: 0 0 16px;
+    color: var(--mint);
+}
+
+.compare-bento-cta p {
+    font-size: 14px;
+    line-height: 1.6;
+    opacity: 0.8;
+    margin: 0;
+    color: var(--mint);
+}
+
+/* Mobile stacked cards */
+.compare-cards-mobile {
+    display: none;
+}
+
+.compare-card {
+    border-bottom: 1px solid var(--border);
+    padding: 32px 0;
+}
+
+.compare-card:last-child {
+    border-bottom: 2px solid var(--dark);
+}
+
+.compare-card-name {
+    font-family: 'PP Air Mono', monospace;
+    font-size: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--dark);
+    text-decoration: none;
+    display: block;
+    margin-bottom: 24px;
+}
+
+.compare-card-name:hover {
+    color: var(--teal);
+}
+
+.compare-card-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+}
+
+.compare-card-row dt {
+    font-family: 'PP Air Mono', monospace;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #000000;
+}
+
+.compare-card-row dd {
+    font-size: 14px;
+    color: var(--text);
+    margin: 0;
+    text-align: right;
+    max-width: 55%;
+}
+
+.compare-card-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--teal);
+    text-decoration: none;
+    margin-top: 16px;
+    transition: transform 500ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.compare-card-link:hover {
+    transform: translateX(4px);
+}
+
+.compare-card-link svg {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+}
+
+.quiz-teaser {
+    background: transparent;
+    border-radius: 0;
+    padding: 48px 32px;
+    text-align: center;
+    margin-top: 64px;
+    max-width: 640px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.quiz-teaser p {
+    color: #000000;
+    margin-top: 8px;
+    font-size: 14px;
+}
+
+/* ─── Responsive ─── */
+@media (max-width: 1024px) {
+    .compare-table {
+        min-width: 800px;
+    }
+
+    .compare-table thead th {
+        padding: 24px 16px;
+    }
+
+    .compare-table tbody td {
+        padding: 24px 16px;
+        font-size: 16px;
+    }
+
+    .compare-bento {
+        height: auto;
+    }
+
+    .compare-bento-main img {
+        aspect-ratio: 16/9;
+    }
+}
+
+@media (max-width: 768px) {
+    /*section { padding-top: 80px !important; padding-bottom: 80px !important; }*/
+    .compare-title {
+        font-size: 31px;
+    }
+
+    .compare-table-wrap {
+        display: none;
+    }
+
+    .compare-cards-mobile {
+        display: block;
+    }
+
+    .compare-bento {
+        gap: 16px;
+    }
+
+    .compare-bento-side {
+        grid-template-rows: 200px 200px;
+        gap: 16px;
+    }
+
+    .compare-bento-caption {
+        bottom: 16px;
+        left: 16px;
+        padding: 12px 16px;
+    }
+
+    .compare-bento-caption p {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .compare-title {
+        font-size: 26px;
+    }
+
+    .compare-card-name {
+        font-size: 16px;
+    }
+
+    .compare-card-row dt {
+        font-size: 11px;
+    }
+
+    .compare-card-row dd {
+        font-size: 13px;
+    }
+
+    .compare-bento-cta {
+        padding: 24px;
+    }
+
+    .compare-bento-cta h3 {
+        font-size: 20px;
+    }
+
+    .quiz-teaser {
+        padding: 32px 16px;
+    }
+}
+
+/* ════════════════════════════════════════════════════════════
+   HARMONISATION CHARTE (analyse profonde) — sections live hors-Figma
+   repassées au design system : vert persan = ACTION uniquement
+   (jamais fond / déco / icône) · zéro bloc blanc ou coloré · plat ·
+   labels PP Air Mono UPPERCASE. Réf : DESIGN.md §2/§3/§6.
+   ════════════════════════════════════════════════════════════ */
+/* Labels mono = texte nu UPPERCASE (annule l'override « plain text ») */
+.mono {
+    text-transform: uppercase !important;
+    letter-spacing: 0.1em !important;
+    font-size: 12px !important;
+    color: var(--color-noir, #000) !important;
+}
+
+/* Comparateur : crème (pas blanc), titre 700, zéro vert décoratif */
+.compare-section {
+    background: var(--color-beige-clair, #F6F5F0) !important;
+}
+
+.compare-title {
+    font-weight: 700 !important;
+}
+
+.compare-label {
+    color: var(--color-beige-fonce, #696761) !important;
+}
+
+.compare-table thead th a,
+.compare-table tfoot a,
+.compare-card-link,
+.compare-card-name:hover {
+    color: var(--color-noir, #000) !important;
+}
+
+/* Bento : la cellule « Fabrication Belge » était un bloc TEAL → crème + ink */
+.compare-bento-cta {
+    background: var(--color-beige, #EEEDE7) !important;
+    color: var(--color-noir, #000) !important;
+}
+
+.compare-bento-cta h3,
+.compare-bento-cta p,
+.compare-bento-cta svg {
+    color: var(--color-noir, #000) !important;
+}
+
+.compare-bento-cta p {
+    opacity: 0.7 !important;
+}
+
+/* Caption bento : voile crème au lieu de blanc */
+.compare-bento-caption {
+    background: rgba(246, 245, 240, 0.92) !important;
+}
+
+/* Inspirations teaser — rangée de visuels (la section était vide) */
+.insp-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin-bottom: 24px;
+}
+
+.insp-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+}
+
+.insp-thumb {
+    display: block;
+    overflow: hidden;
+    position: relative;
+    aspect-ratio: 3 / 4;
+}
+
+.insp-thumb img {
+    width: 100%;
+    aspect-ratio: 3/4;
+    object-fit: cover;
+    display: block;
+    transition: transform 700ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.insp-thumb:hover img {
+    transform: scale(1.04);
+}
+
+@media (max-width: 768px) {
+    .insp-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* ── FIX chevauchement bento ──────────────────────────────────
+   L'ancien layout (.compare-bento height:600px + img height:100%)
+   débordait (colonne side = 1671px) et recouvrait la section
+   inspirations. Layout robuste par ASPECT-RATIO : zéro hauteur fixe,
+   chaque tuile se dimensionne sur sa largeur → impossible de déborder. */
+.compare-bento {
+    height: auto !important;
+    align-items: start !important;
+    grid-template-columns: 2fr 1fr !important;
+    gap: 8px !important;
+}
+
+.compare-bento-main {
+    aspect-ratio: 3 / 2 !important;
+    height: auto !important;
+}
+
+.compare-bento-main img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100% !important;
+    object-fit: cover;
+}
+
+.compare-bento-side {
+    grid-template-rows: none !important;
+    grid-auto-rows: auto !important;
+    gap: 8px !important;
+}
+
+.compare-bento-img {
+    aspect-ratio: 4 / 3 !important;
+    height: auto !important;
+}
+
+.compare-bento-img img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100% !important;
+    object-fit: cover;
+}
+
+@media (max-width: 768px) {
+    .compare-bento {
+        grid-template-columns: 1fr !important;
+    }
+}

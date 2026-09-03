@@ -1,0 +1,459 @@
+:root {
+    --cs-bg: #F6F5F0;
+    --cs-beige: #EEEDE7;
+    --cs-text: #000;
+    --cs-text-secondary: rgba(0, 0, 0, 0.62);
+    --cs-text-tertiary: #696761;
+    --cs-accent: #0C524E;
+    --cs-mint: #BEECCC;
+    --cs-flash: #C1FD48;
+    --cs-blue: #158AFF;
+    --cs-border: rgba(0, 0, 0, 0.10);
+    --cs-ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.breadcrumb {
+    font-family: "PP Air Mono", monospace;
+    padding-top: 168px;
+}
+
+@media (max-width: 768px) {
+    .breadcrumb {
+        padding-top: 120px;
+    }
+}
+
+.cs-landing {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: stretch;
+    min-height: clamp(560px, 70vh, 860px);
+}
+
+.cs-landing-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+    padding: clamp(40px, 5vw, 80px);
+    text-align: center;
+}
+
+.cs-landing-title {
+    font-family: "Yet Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: clamp(1.7rem, 3vw, 2.4rem);
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    color: var(--cs-text);
+    margin: 0;
+    max-width: 18ch;
+}
+
+.cs-landing-sub {
+    font-family: "PP Air Mono", monospace;
+    font-size: 16px;
+    line-height: 1.45;
+    letter-spacing: 0.025em;
+    color: var(--cs-text);
+    margin: 0;
+    max-width: 42ch;
+}
+
+.cs-landing-media {
+    position: relative;
+    overflow: hidden;
+    background: var(--cs-beige);
+}
+
+.cs-landing-media > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.cs-floatcard {
+    position: absolute;
+    right: clamp(12px, 3vw, 40px);
+    bottom: clamp(12px, 3vw, 40px);
+    width: clamp(176px, 16vw, 233px);
+    background: #fff;
+    padding: 8px;
+    display: block;
+    text-decoration: none;
+    color: var(--cs-text);
+}
+
+.cs-floatcard-img {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1/1;
+    overflow: hidden;
+    background: var(--cs-beige);
+}
+
+.cs-floatcard-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.cs-floatcard-badge {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    background: var(--cs-blue);
+    color: #fff;
+    font-family: "PP Air Mono", monospace;
+    font-size: 12px;
+    letter-spacing: 0.025em;
+    padding: 3px 8px;
+    border-radius: 3px;
+}
+
+.cs-floatcard-row {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 8px;
+    padding: 8px 4px 4px;
+}
+
+.cs-floatcard-name {
+    font-family: "Yet Grotesk", sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.3;
+}
+
+.cs-floatcard-add {
+    flex-shrink: 0;
+    width: 26px;
+    height: 26px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--cs-text);
+    border-radius: 50%;
+    font-size: 16px;
+    line-height: 1;
+}
+
+.cs-feature {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: clamp(32px, 6vw, 100px);
+    padding-top: clamp(56px, 8vw, 120px);
+}
+
+.cs-feature-imgwrap {
+    position: relative;
+    justify-self: center;
+    width: min(385px, 78%);
+}
+
+.cs-feature-imgwrap img {
+    width: 100%;
+    aspect-ratio: 385/479;
+    object-fit: cover;
+    display: block;
+    background: var(--cs-beige);
+}
+
+.cs-tag {
+    position: absolute;
+    z-index: 2;
+    font-family: "Yet Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1;
+    padding: 16px 26px;
+    white-space: nowrap;
+}
+
+/* Tags obliques (Figma) — placement éparpillé + rotation */
+.cs-tag--room {
+    background: var(--cs-accent);
+    color: #fff;
+    border-radius: 8px;
+    bottom: -4%;
+    left: 30%;
+    transform: rotate(-8deg);
+}
+
+.cs-tag--type {
+    background: var(--cs-mint);
+    color: var(--cs-accent);
+    border-radius: 25px;
+    top: -4%;
+    right: -14%;
+    transform: rotate(-8deg);
+}
+
+.cs-tag--collection {
+    background: var(--cs-flash);
+    color: var(--cs-accent);
+    border-radius: 50px;
+    top: 26%;
+    left: -13%;
+    transform: rotate(-13deg);
+}
+
+.cs-feature-text {
+    border-top: 1px solid var(--cs-text);
+    padding-top: 25px;
+}
+
+.cs-feature-text p {
+    font-size: 16px;
+    line-height: 1.65;
+    color: var(--cs-text);
+    margin: 0;
+}
+
+.cs-imgtag {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: clamp(32px, 5vw, 80px);
+    padding-top: clamp(56px, 8vw, 120px);
+}
+
+.cs-imgtag-img {
+    overflow: hidden;
+    background: var(--cs-beige);
+}
+
+.cs-imgtag-img img {
+    width: 100%;
+    aspect-ratio: 5/4;
+    object-fit: cover;
+    display: block;
+}
+
+.cs-imgtag-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    text-align: center;
+}
+
+.cs-imgtag-text h2 {
+    font-family: "Yet Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: clamp(1.5rem, 2.6vw, 2rem);
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    margin: 0;
+}
+
+.cs-imgtag-text p {
+    font-family: "PP Air Mono", monospace;
+    font-size: 16px;
+    line-height: 1.45;
+    letter-spacing: 0.025em;
+    color: var(--cs-text);
+    margin: 0;
+    max-width: 42ch;
+}
+
+.cs-imgright {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-top: clamp(56px, 8vw, 120px);
+}
+
+.cs-imgright-img {
+    grid-column: 2;
+    overflow: hidden;
+    background: var(--cs-beige);
+}
+
+.cs-imgright-img img {
+    width: 100%;
+    aspect-ratio: 2/3;
+    object-fit: cover;
+    display: block;
+}
+
+.cs-bigimg {
+    padding-top: clamp(56px, 8vw, 120px);
+}
+
+.cs-bigimg img {
+    width: 100%;
+    aspect-ratio: 3/2;
+    object-fit: cover;
+    display: block;
+    background: var(--cs-beige);
+}
+
+.cs-fullbleed {
+    padding-top: clamp(56px, 8vw, 120px);
+}
+
+.cs-fullbleed img {
+    width: 100%;
+    height: clamp(360px, 52vw, 760px);
+    object-fit: cover;
+    display: block;
+    background: var(--cs-beige);
+}
+
+.cs-carousel {
+    padding-top: clamp(64px, 9vw, 130px);
+}
+
+.cs-carousel-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 24px;
+    margin: 0 0 32px;
+}
+
+.cs-carousel-head h2 {
+    font-family: "Yet Grotesk", sans-serif;
+    font-size: clamp(1.4rem, 2.4vw, 2rem);
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    margin: 0;
+}
+
+.cs-carousel-center {
+    text-align: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cs-carousel-center .cs-carousel-sub {
+    font-family: "PP Air Mono", monospace;
+    font-size: 14px;
+    letter-spacing: 0.025em;
+    color: var(--cs-text-tertiary);
+    margin-top: 8px;
+}
+
+.cs-carousel-link {
+    font-family: "PP Air Mono", monospace;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--cs-accent);
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.cs-carousel-track {
+    display: flex;
+    gap: 8px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding-bottom: 4px;
+}
+
+.cs-carousel-track::-webkit-scrollbar {
+    display: none;
+}
+
+.cs-carousel-card {
+    flex: 0 0 clamp(240px, 24vw, 320px);
+    scroll-snap-align: start;
+    text-decoration: none;
+    color: inherit;
+}
+
+.cs-carousel-card-img {
+    overflow: hidden;
+    background: var(--cs-beige);
+}
+
+.cs-carousel-card-img img {
+    width: 100%;
+    aspect-ratio: 3/4;
+    object-fit: cover;
+    display: block;
+    transition: transform 700ms var(--cs-ease);
+}
+
+.cs-carousel-card:hover .cs-carousel-card-img img {
+    transform: scale(1.04);
+}
+
+.cs-carousel-card-label {
+    font-family: "PP Air Mono", monospace;
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--cs-text-tertiary);
+    margin: 12px 0 4px;
+}
+
+.cs-carousel-card h3 {
+    font-family: "Yet Grotesk", sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    margin: 0;
+    color: var(--cs-text);
+}
+
+.cs-carousel--projects .cs-carousel-card {
+    flex-basis: clamp(280px, 30vw, 420px);
+}
+
+.cs-carousel--projects .cs-carousel-card-img img {
+    aspect-ratio: 4/3;
+}
+
+.cs-carousel--projects .cs-carousel-card h3 {
+    font-size: 1.15rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin-top: 4px;
+}
+
+@media (max-width: 900px) {
+    .cs-landing {
+        grid-template-columns: 1fr;
+        min-height: 0;
+    }
+
+    .cs-landing-media {
+        aspect-ratio: 4/3;
+    }
+
+    .cs-feature, .cs-imgtag, .cs-imgright {
+        grid-template-columns: 1fr;
+        gap: 28px;
+    }
+
+    .cs-imgright-img {
+        grid-column: 1;
+    }
+
+    .cs-feature-imgwrap {
+        width: min(385px, 70%);
+        margin: 8px auto 24px;
+    }
+
+    .cs-tag--room {
+        left: 18%;
+        bottom: -3%;
+    }
+
+    .cs-tag--type {
+        right: -2%;
+    }
+
+    .cs-tag--collection {
+        left: -2%;
+    }
+}

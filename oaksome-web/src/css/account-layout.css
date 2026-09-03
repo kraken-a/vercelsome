@@ -1,0 +1,144 @@
+/* ─── Account layout (/profile, /commandes, ...) ─────────────── */
+
+.account-page {
+  padding-top: 80px;
+  padding-bottom: 4rem;
+  min-height: 100vh;
+  background: #F6F5F0;
+}
+
+.account-layout {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: 3rem;
+  padding-top: 1rem;
+}
+
+/* ─── Sidebar ───────────────────────────────────────────────── */
+.account-sidebar {
+  position: sticky;
+  top: 110px;
+  align-self: start;
+}
+
+.account-avatar {
+  width: 80px;
+  height: 80px;
+  background: #BEECCC;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  color: #0C524E;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.account-sidebar h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin: 0 0 0.2rem;
+}
+
+.account-sidebar .account-email {
+  font-size: 0.9rem;
+  color: #000;
+  margin: 0 0 1.5rem;
+}
+
+.sidebar-nav {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.sidebar-nav li a {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 0.7rem 1rem;
+  border-radius: 0;
+  text-decoration: none;
+  color: #1a1a1a;
+  font-size: 1rem;
+  transition: all 500ms ease-out;
+}
+
+.sidebar-nav li a:hover {
+  background: #EEEDE7;
+}
+
+.sidebar-nav li a.active {
+  background: #EEEDE7;
+  color: #0C524E;
+  font-weight: 500;
+}
+
+.sidebar-nav .nav-icon {
+  width: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: inherit;
+}
+
+.sidebar-logout-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 0.7rem 1rem;
+  width: 100%;
+  background: none;
+  border: none;
+  border-radius: 0;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 1rem;
+  color: #1a1a1a;
+  margin-top: 0.3rem;
+  text-align: left;
+  transition: all 500ms ease-out;
+}
+.sidebar-logout-btn:hover {
+  background: #EEEDE7;
+}
+
+/* ─── Content area ──────────────────────────────────────────── */
+.account-content {
+  min-height: 600px;
+}
+
+/* ─── Loading / guard state ─────────────────────────────────── */
+.account-loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  font-size: 0.9rem;
+  color: #696761;
+}
+
+/* ─── Responsive ─────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .account-page { padding-top: 72px; }
+  .account-layout { grid-template-columns: 1fr; gap: 1.5rem; }
+  .account-sidebar {
+    position: static;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .sidebar-nav {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .sidebar-nav li a { padding: 0.5rem 0.8rem; font-size: 0.85rem; }
+  .sidebar-nav li a .nav-icon { display: none; }
+  .sidebar-nav li a.logout-link { margin-top: 0; }
+}

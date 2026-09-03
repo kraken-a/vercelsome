@@ -1,0 +1,62 @@
+/* ═══════════════════════════════════════════════════════════════
+   Accessibility — focus indicators + skip link (QA-010 fixes)
+   Loaded last so cascade beats component overrides on ties.
+   ═══════════════════════════════════════════════════════════════ */
+
+/* Universal focus-visible backstop — vert-persan 8.25:1 contrast on crème */
+*:focus-visible {
+  outline: 2px solid var(--color-vert-persan, #0C524E);
+  outline-offset: 2px;
+  border-radius: inherit;
+}
+
+/* Restore visible focus on inputs/buttons where component CSS set outline:none */
+.search-box input:focus-visible,
+.newsletter-input-wrap input:focus-visible,
+.profile-input:focus-visible,
+.login-input:focus-visible,
+.search-overlay input:focus-visible,
+.price-filter select:focus-visible {
+  outline: 2px solid var(--color-vert-persan, #0C524E);
+  outline-offset: 2px;
+}
+
+/* Nav links — component CSS uses :focus { outline:none }; this re-applies on keyboard */
+nav a:focus-visible,
+.footer-stoemp a:focus-visible,
+.nav-dropdown-link:focus-visible,
+.nav-icon:focus-visible {
+  outline: 2px solid var(--color-vert-persan, #0C524E);
+  outline-offset: 2px;
+}
+
+/* When <main> receives focus via skip-link, suppress visible ring (it's a programmatic landmark, not interactive) */
+main[tabindex="-1"]:focus,
+main[tabindex="-1"]:focus-visible {
+  outline: none;
+}
+
+/* ─── Skip navigation link ─── */
+.skip-link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 12px 20px;
+  background: var(--color-vert-persan, #0C524E);
+  color: #ffffff;
+  font-family: var(--font-body, inherit);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  z-index: 10000;
+  transform: translateY(-150%);
+  transition: transform 200ms ease-out;
+}
+
+.skip-link:focus,
+.skip-link:focus-visible {
+  transform: translateY(0);
+  outline: 2px solid #ffffff;
+  outline-offset: -4px;
+}

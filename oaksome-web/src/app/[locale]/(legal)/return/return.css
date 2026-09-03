@@ -1,0 +1,123 @@
+.ret-hero {
+  background: var(--beige);
+  color: var(--dark);
+  padding: 120px 0;
+  text-align: center;
+}
+.ret-hero h1 {
+  font-size: 2.8rem;
+  margin-bottom: 1rem;
+  color: var(--dark);
+}
+.ret-hero p {
+  font-size: 1.15rem;
+  color: #000000;
+  max-width: 560px;
+  margin: 0 auto;
+}
+.legal-block {
+  background: var(--beige);
+  border-radius: 0;
+  padding: 2rem;
+  max-width: 720px;
+  margin: 2rem auto 0;
+}
+.legal-block h4 {
+  margin-bottom: 0.8rem;
+}
+.legal-block p {
+  font-size: 1.125rem;
+  color: #000000;
+  line-height: 1.7;
+}
+.case-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+.case-card {
+  background: var(--white);
+  border-radius: 0;
+  padding: 2rem;
+  border: 1px solid var(--border);
+}
+.case-icon {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  display: block;
+}
+.case-card h4 {
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+}
+.case-card p {
+  font-size: 1.125rem;
+  color: #000000;
+  line-height: 1.6;
+}
+.case-card .case-detail {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border);
+  font-size: 1.125rem;
+  color: #000000;
+}
+.signal-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+.signal-card {
+  background: var(--white);
+  border-radius: 0;
+  padding: 1.5rem;
+  text-align: center;
+  border: 1px solid var(--border);
+}
+.signal-num {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--beige);
+  color: var(--dark);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+.signal-card h4 {
+  font-size: 0.95rem;
+  margin-bottom: 0.4rem;
+}
+.signal-card p {
+  font-size: 1.125rem;
+  color: #000000;
+}
+section {
+  padding: 120px 0;
+  border-top: none;
+  border-bottom: none;
+}
+@media (max-width: 768px) {
+  .case-grid {
+    grid-template-columns: 1fr;
+  }
+  .signal-grid {
+    grid-template-columns: 1fr;
+  }
+  .ret-hero h1 {
+    font-size: 2rem;
+  }
+}
+@media (max-width: 480px) {
+  .ret-hero {
+    padding: 3.5rem 0 3rem;
+  }
+  .ret-hero h1 {
+    font-size: 1.6rem;
+  }
+}

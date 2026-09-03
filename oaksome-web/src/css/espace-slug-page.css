@@ -1,0 +1,397 @@
+/* ─── Espace single page (e.g. /espace/chambre) ──────────────── */
+
+.esp-slug-page {
+  padding-top: 62px;
+}
+/* Combo hero: page starts right below fixed nav, breadcrumb is compact */
+.esp-slug-page--combo {
+  padding-top: calc(var(--promo-h, 0px) + 91px);
+}
+.esp-slug-page--combo .breadcrumb {
+  padding-top: 26px !important;
+  padding-bottom: 6px !important;
+  font-family: "PP Air Mono", monospace !important;
+  font-size: 12px !important;
+  font-weight: 400 !important;
+  letter-spacing: 0.02em !important;
+  margin-bottom: 0 !important;
+}
+.esp-slug-page .breadcrumb {
+  margin-bottom: 1.5rem;
+}
+
+/* Hero */
+.esp-slug-hero {
+  position: relative;
+  min-height: 65vh;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  overflow: hidden;
+  color: #fff;
+}
+.esp-slug-hero img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.esp-slug-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.55));
+  z-index: 1;
+}
+.esp-slug-hero-content {
+  position: relative;
+  z-index: 2;
+  padding: 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 800px;
+}
+.esp-slug-hero-content h1 {
+  font-size: clamp(3rem, 7vw, 5.5rem);
+  font-weight: 700;
+  letter-spacing: -0.05em;
+  line-height: 0.98;
+  color: #fff;
+  margin: 0;
+}
+.esp-slug-hero-content p {
+  font-size: clamp(1rem, 1.5vw, 1.3rem);
+  color: rgba(255,255,255,0.9);
+  line-height: 1.6;
+  margin: 0;
+  max-width: 560px;
+}
+
+/* Type cards grid */
+.esp-slug-types {
+  padding: var(--section-py) 0;
+}
+.esp-slug-types-header {
+  margin-bottom: 48px;
+}
+.esp-slug-types-header h2 {
+  font-size: clamp(25px, 4vw, 39px);
+  letter-spacing: -0.02em;
+  margin: 0 0 16px;
+}
+.esp-slug-types-header p {
+  font-size: 16px;
+  color: #000;
+  max-width: 560px;
+  line-height: 1.6;
+  margin: 0;
+}
+.esp-slug-types-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+/* Individual type card */
+.esp-slug-type-card {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  background: #EEEDE7;
+  transition: transform 700ms cubic-bezier(0.22,1,0.36,1);
+}
+.esp-slug-type-card:hover {
+  transform: translateY(-2px);
+}
+.esp-slug-type-card-img {
+  overflow: hidden;
+  aspect-ratio: 4/3;
+}
+.esp-slug-type-card-img img {
+  width: 100%;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  display: block;
+  transition: transform 700ms cubic-bezier(0.22,1,0.36,1);
+}
+.esp-slug-type-card:hover .esp-slug-type-card-img img {
+  transform: scale(1.03);
+}
+.esp-slug-type-card-body {
+  padding: 24px;
+}
+.esp-slug-type-card-label {
+  font-family: 'PP Air Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #696761;
+  display: block;
+  margin-bottom: 8px;
+}
+.esp-slug-type-card-body h3 {
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  margin: 0 0 8px;
+  color: #1a1a1a;
+}
+.esp-slug-type-card-body p {
+  font-size: 14px;
+  color: #000;
+  line-height: 1.6;
+  margin: 0 0 16px;
+}
+.esp-slug-type-discover {
+  font-family: 'PP Air Mono', monospace;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #000;
+}
+
+/* Spec / détail signature */
+.esp-slug-spec {
+  padding: var(--section-py) 0;
+}
+.esp-slug-spec-intro {
+  margin-bottom: 48px;
+}
+.esp-slug-spec-intro h2 {
+  font-size: clamp(25px, 4vw, 39px);
+  letter-spacing: -0.02em;
+  margin: 0 0 16px;
+}
+.esp-slug-spec-intro p {
+  font-size: 16px;
+  color: #696761;
+  max-width: 560px;
+  line-height: 1.6;
+  margin: 0;
+}
+.esp-slug-spec-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+.esp-slug-spec-card {
+  background: #EEEDE7;
+  overflow: hidden;
+}
+.esp-slug-spec-card img {
+  width: 100%;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  display: block;
+  transition: transform 700ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+.esp-slug-spec-card:hover img {
+  transform: scale(1.03);
+}
+.esp-slug-spec-card-body {
+  padding: 20px;
+}
+.esp-slug-spec-card-body h4 {
+  font-weight: 500;
+  font-size: 15px;
+  letter-spacing: -0.01em;
+  margin: 0 0 4px;
+  color: #000;
+}
+.esp-slug-spec-card-body p {
+  font-size: 12px;
+  line-height: 1.5;
+  color: #696761;
+  margin: 0;
+}
+
+/* Collections ambiances */
+.esp-slug-collections {
+  padding: var(--section-py) 0;
+}
+.esp-slug-collections .section-header {
+  text-align: left;
+  margin-bottom: 48px;
+}
+.esp-slug-collections .section-header h2 {
+  font-size: clamp(30px, 3.5vw, 50px);
+  letter-spacing: 0;
+}
+.esp-slug-collections .section-header p {
+  margin-left: 0;
+  font-size: 14px;
+}
+.esp-slug-collections-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+}
+.esp-slug-coll-card {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  text-decoration: none;
+}
+.esp-slug-coll-card img {
+  width: 100%;
+  aspect-ratio: 4/5;
+  object-fit: cover;
+  display: block;
+  transition: transform 700ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+.esp-slug-coll-card:hover img {
+  transform: scale(1.04);
+}
+.esp-slug-coll-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(180deg, rgba(0,0,0,0) 40%, rgba(0,0,0,0.8) 100%);
+}
+.esp-slug-coll-cap {
+  position: absolute;
+  left: 20px;
+  bottom: 20px;
+  z-index: 1;
+}
+.esp-slug-coll-cap-eyebrow {
+  font-family: "PP Air Mono", monospace;
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #fff;
+  opacity: 0.85;
+  display: block;
+  margin-bottom: 2px;
+}
+.esp-slug-coll-cap h3 {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 1.05;
+  margin: 0 0 4px;
+  color: #fff;
+}
+.esp-slug-coll-cap p {
+  font-family: "PP Air Mono", monospace;
+  font-size: 10px;
+  color: #fff;
+  opacity: 0.8;
+  margin: 0;
+}
+
+/* Dimensions */
+.esp-slug-dims-section {
+  padding: var(--section-py) 0;
+}
+.esp-slug-dims {
+  max-width: 800px;
+  margin: 0 auto;
+}
+.esp-slug-dims h2 {
+  font-size: clamp(30px, 3.5vw, 50px);
+  letter-spacing: 0;
+  margin: 0.5rem 0 1.5rem;
+}
+.esp-slug-dims-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-top: 1.5rem;
+}
+.esp-slug-dims-grid h4 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: 0;
+  margin: 0 0 8px;
+  color: #000;
+}
+.esp-slug-dims-grid p {
+  font-size: 14px;
+  color: #000;
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* Band CTA — espace page uses full h2 scale (no 2.2rem override like collection) */
+.esp-slug-page .band h2 {
+  font-size: clamp(30px, 3.5vw, 50px);
+  letter-spacing: 0;
+}
+
+/* Products */
+.esp-slug-products {
+  padding: var(--section-py) 0;
+}
+.esp-slug-products .section-header {
+  text-align: left;
+  margin-bottom: 2rem;
+}
+.esp-slug-products .section-header h2 {
+  font-size: clamp(30px, 3.5vw, 50px);
+  letter-spacing: 0;
+}
+.esp-slug-products .section-header p {
+  font-size: 14px;
+  margin-left: 0;
+  max-width: none;
+}
+
+/* Inspirations */
+.esp-slug-inspo {
+  padding: 3rem 0;
+  background: #F6F5F0;
+}
+.esp-slug-inspo-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+.esp-slug-inspo-inner h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin: 0.3rem 0 0;
+  color: #1a1a1a;
+}
+.esp-slug-inspo-inner p {
+  font-size: 0.9rem;
+  color: #000;
+  margin: 0.3rem 0 0;
+}
+
+/* ─── Responsive ─────────────────────────────────────────────── */
+@media (max-width: 1024px) {
+  .esp-slug-types-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  .esp-slug-collections-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+  .esp-slug-page { padding-top: 72px; }
+  .esp-slug-hero { min-height: 55vh; }
+  .esp-slug-hero-content { padding: 40px 24px; }
+  .esp-slug-types { padding: 3rem 0; }
+  .esp-slug-spec { padding: 3rem 0; }
+  .esp-slug-spec-grid { grid-template-columns: repeat(2, 1fr); }
+  .esp-slug-collections { padding: 3rem 0; }
+  .esp-slug-dims-section { padding: 3rem 0; }
+  .esp-slug-dims-grid { grid-template-columns: 1fr; }
+  .esp-slug-products { padding: 3rem 0; }
+}
+
+@media (max-width: 560px) {
+  .esp-slug-collections-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 480px) {
+  .esp-slug-types-grid { grid-template-columns: 1fr; }
+  .esp-slug-spec-grid { grid-template-columns: 1fr; }
+  .esp-slug-hero-content { padding: 32px 16px; }
+}

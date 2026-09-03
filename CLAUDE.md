@@ -1,3 +1,9 @@
+# Claude Code Instructions
+
+@AGENTS.md
+
+Read and follow `AGENTS.md`.
+
 # context-mode — MANDATORY routing rules
 
 You have context-mode MCP tools available. These rules are NOT optional — they protect your context window from flooding. A single unrouted command can dump 56 KB into context and waste the entire session.

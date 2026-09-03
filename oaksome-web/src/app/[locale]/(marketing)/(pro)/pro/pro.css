@@ -1,0 +1,789 @@
+.pro-hero {
+    position: relative;
+    min-height: 520px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--dark);
+    overflow: hidden;
+}
+
+.pro-hero img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+}
+
+.pro-hero::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.pro-hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 680px;
+    padding: 3rem 1.5rem;
+}
+
+.pro-hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: var(--dark);
+}
+
+.pro-hero-content p {
+    font-size: 1.15rem;
+    color: #ffffff;
+    line-height: 1.6;
+}
+
+.value-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.value-card {
+    background: var(--white);
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    border-radius: 0;
+    padding: 2rem 1.5rem;
+    text-align: center;
+    box-shadow: none;
+}
+
+.value-card .card-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.value-card h4 {
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+.value-card p {
+    font-size: 1.125rem;
+    color: #000000;
+    line-height: 1.5;
+}
+
+.testimonial-placeholder {
+    background: #f6f5f0;
+    border-radius: 0;
+    padding: 3rem 2rem;
+    text-align: center;
+    max-width: 640px;
+    margin: 2rem auto 0;
+}
+
+.testimonial-placeholder p {
+    color: #000000;
+    font-size: 1.125rem;
+    margin-top: 0.8rem;
+}
+
+.pro-form-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+}
+
+.pro-form-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border: 1.5px solid var(--border);
+    border-radius: 0;
+    font-size: 1.125rem;
+    font-family: inherit;
+    background: var(--white);
+    transition: border-color 0.5s ease-out;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary);
+}
+
+.form-group textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+/* Section padding override (min 120px vertical on desktop) */
+section {
+    padding: 120px 0 !important;
+}
+
+
+.spec-grid {
+    display: grid;
+    gap: 8px;
+}
+
+.spec-grid--5 {
+    grid-template-columns: repeat(5, 1fr);
+}
+
+.spec-grid--4 {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.spec-grid--3 {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.spec-grid--2 {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.spec-card {
+    background: var(--color-beige, #EEEDE7);
+    overflow: hidden;
+}
+
+.spec-card img {
+    width: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 700ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.spec-card--layout img {
+    aspect-ratio: 4/3;
+}
+
+.spec-card--square img {
+    aspect-ratio: 1/1;
+}
+
+.spec-card:hover img {
+    transform: scale(1.03);
+}
+
+.spec-card-body {
+    padding: 20px;
+}
+
+.spec-card-body h4 {
+    font-family: "Yet Grotesk", sans-serif;
+    font-weight: 500;
+    font-size: 15px;
+    letter-spacing: -0.01em;
+    margin: 0 0 4px;
+    color: var(--color-noir, #000);
+}
+
+.spec-card-body p {
+    font-size: 12px;
+    line-height: 1.5;
+    color: var(--color-beige-fonce, #696761);
+    margin: 0;
+}
+
+.spec-eyebrow {
+    font-family: "PP Air Mono", monospace;
+    font-size: 11px;
+    letter-spacing: 0.025em;
+    text-transform: uppercase;
+    color: var(--color-beige-fonce, #696761);
+    display: block;
+    margin-bottom: 8px;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 48px;
+}
+
+.section-header p {
+    max-width: 600px;
+    margin: 16px auto 0;
+}
+
+.section-header {
+    text-align: left;
+    margin-bottom: 48px;
+}
+
+.section-header p {
+    margin: 16px 0 0;
+    max-width: 600px;
+}
+
+.section-header.centered {
+    text-align: center;
+}
+
+.section-header.centered p {
+    margin: 16px auto 0;
+}
+
+
+.step::before {
+    transition: transform 500ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.step:hover::before {
+    transform: scale(1.1);
+}
+
+.steps {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 48px;
+    counter-reset: step;
+}
+
+.steps .step {
+    text-align: center;
+    counter-increment: step;
+}
+
+.steps .step::before {
+    content: counter(step);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: var(--color-noir, #000000);
+    color: var(--color-blanc);
+    font-size: 18px;
+    font-weight: 700;
+    margin: 0 auto 16px;
+}
+
+.steps .step h4 {
+    margin-bottom: 8px;
+}
+
+.steps .step p {
+    font-size: 16px;
+    color: #000000;
+}
+
+.form-box .form-actions .btn-charte-solid,
+.form-box .form-actions .cta-single {
+    width: 100%;
+    text-align: center;
+}
+
+.btn-charte-solid {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 44px;
+    padding: 0 28px;
+    background: var(--color-noir);
+    color: #fff;
+    border: 1px solid var(--color-noir);
+    font-family: "PP Air Mono", monospace;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-decoration: none;
+    cursor: pointer;
+    transition: opacity 250ms ease;
+}
+
+.btn-charte-solid:hover {
+    opacity: 0.85;
+}
+
+@media (max-width: 1024px) {
+    .spec-grid--5, .spec-grid--4, .spec-grid--3 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 640px) {
+    .spec-grid--5, .spec-grid--4, .spec-grid--3, .spec-grid--2 {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    section {
+        padding: 80px 0 !important;
+    }
+
+    .value-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .pro-form-section {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .pro-hero-content h1 {
+        font-size: 2.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .value-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 640px) {
+    .form-box .form-row {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+.form-box .form-group {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 0;
+    background: var(--color-blanc, #FFFFFF);
+    border: 1px solid var(--color-beige, #EEEDE7);
+    border-radius: 3px;
+    padding: 16px;
+    transition: border-color 500ms ease-out;
+}
+
+.form-box .form-group--select select,
+.form-box .form-group--date input {
+    font-family: "Yet Grotesk", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.form-box .form-group:focus-within {
+    border-color: var(--color-beige-fonce, #696761);
+}
+
+.form-box .form-group label {
+    display: block;
+    font-family: "PP Air Mono", "Courier New", monospace;
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: 0.025em;
+    text-transform: uppercase;
+    line-height: 1;
+    color: var(--color-beige-fonce, #696761);
+    background: none;
+    border: none;
+    padding: 0;
+    margin-bottom: 0;
+}
+
+/* Champs — nus dans la box */
+.form-box .form-group input,
+.form-box .form-group select,
+.form-box .form-group textarea {
+    width: 100%;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    font-family: "Yet Grotesk", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 18px;
+    color: var(--color-noir, #000000);
+    background: transparent;
+    box-sizing: border-box;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.form-box .form-group input:focus,
+.form-box .form-group select:focus,
+.form-box .form-group textarea:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+/* Placeholder YG Medium 14 Dark Beige (= valeur du composant) */
+.form-box .form-group input::placeholder,
+.form-box .form-group textarea::placeholder {
+    color: var(--color-beige-fonce, #696761);
+    font-family: "Yet Grotesk", sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0;
+    text-transform: none;
+}
+
+.gap8 {
+    gap: 8px !important;
+}
+
+.form-send {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 226px;
+    height: 60px;
+    padding: 0 25px;
+    border: 0;
+    border-radius: 25px;
+    background: var(--color-bleu-provence, #158AFF);
+    color: #FFFFFF;
+    font-family: "Yet Grotesk", sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 500ms ease-out;
+}
+
+.form-send:hover {
+    background: #0F6FD6;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: center;
+    margin-top: 32px;
+}
+
+/* Select : chevron SVG à droite de la box */
+.form-box .form-group select {
+    padding-right: 28px;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="8" viewBox="0 0 12 8" fill="none"><path d="M1 1l5 5 5-5" stroke="%23696761" stroke-width="1.5" stroke-linecap="round"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 4px center;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+/* Textarea */
+.form-box .form-group textarea {
+    min-height: 110px;
+    resize: vertical;
+    font-family: "Yet Grotesk", sans-serif;
+    font-size: 14px;
+}
+
+/* Disabled */
+.form-box .form-group input:disabled,
+.form-box .form-group select:disabled,
+.form-box .form-group textarea:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    background: var(--color-beige, #EEEDE7);
+}
+
+/* Helper / hint */
+.form-box .form-hint {
+    font-family: "PP Air Mono", "Courier New", monospace;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    line-height: 1.5;
+    color: var(--color-beige-fonce, #696761);
+    margin-top: 4px;
+}
+
+.form-box .form-hint.error {
+    color: #D32F2F; /* [FIGMA-PENDING] couleur erreur officielle — valider Clément */
+    font-weight: 700;
+}
+
+.form-box .form-hint.success {
+    color: var(--color-vert-persan, #0C524E);
+}
+
+/* Rangée multi-colonnes — frame : 2 × 575 gap 8 */
+.form-box .form-row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+}
+
+.form-box .form-row .form-group {
+    margin-bottom: 0;
+}
+
+/* Select / date variantes (héritent du groupe) */
+.form-box .form-group--select select,
+.form-box .form-group--date input {
+    font-family: "Yet Grotesk", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+/* Actions (réutilise .btn-charte-solid) */
+.form-box .form-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 12px;
+    margin-top: 32px;
+}
+
+.form-box .form-actions .btn-charte-solid,
+.form-box .form-actions .cta-single {
+    width: 100%;
+    text-align: center;
+}
+
+/* Bouton d'envoi = .form-send global (CTA Login/Sign-in V7 4346:29215 :
+   pill bleu #158AFF 226×60 r25, ATTESTÉ sur les frames Prises de mesures/RDV
+   et l'auth — l'ancienne règle persan flat datait d'avant la résolution V7). */
+
+/* Consentement RGPD (mono) */
+.form-box .form-consent {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.form-box .form-consent input {
+    margin-top: 4px;
+    flex-shrink: 0;
+    accent-color: var(--color-vert-persan, #0C524E);
+}
+
+.form-box .form-consent label {
+    font-family: "PP Air Mono", monospace;
+    font-size: 11px;
+    line-height: 1.6;
+    letter-spacing: 0.02em;
+    color: var(--color-beige-fonce, #696761);
+}
+
+.form-box .form-consent a {
+    color: var(--color-bleu-provence, #158AFF);
+    text-decoration: none;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   PAGES LÉGALES EN ACCORDÉON — composant charté (Figma CGV 4346:21960 / PDC 4346:21994)
+   Réutilise les .legal-section numérotées existantes ; wrap + toggle via js/legal-accordion.js.
+   ═══════════════════════════════════════════════════════════════ */
+.legal-acc {
+    max-width: 860px;
+    margin: 0 auto;
+}
+
+.legal-acc .legal-toc {
+    display: none;
+}
+
+/* TOC redondant avec l'accordéon */
+.legal-acc .updated {
+    font-family: "PP Air Mono", monospace;
+    font-size: 12px;
+    letter-spacing: 0.025em;
+    text-transform: none;
+    color: var(--color-beige-fonce, #696761);
+    margin: 0 0 24px;
+}
+
+.legal-acc .legal-section {
+    margin: 0;
+    padding: 24px 0;
+    border-top: 0.75px solid rgba(0, 0, 0, 0.18);
+}
+
+.legal-acc .legal-section:first-of-type {
+    border-top: none;
+}
+
+.legal-acc .legal-section h2,
+.legal-acc .legal-section h3 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+    margin: 0;
+    padding: 0;
+    border: none;
+    cursor: pointer;
+    font-family: "Yet Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: clamp(18px, 1.6vw, 22px);
+    line-height: 1.25;
+    letter-spacing: -0.01em;
+    color: var(--color-noir, #000);
+}
+
+.legal-acc .legal-toggle {
+    flex-shrink: 0;
+    font-size: 26px;
+    line-height: 1;
+    color: var(--color-noir, #000);
+}
+
+.legal-acc .legal-section:not(.collapsed) .legal-toggle {
+    color: var(--color-bleu-provence, #158AFF);
+}
+
+.legal-acc .legal-body {
+    padding-top: 16px;
+    max-width: 760px;
+}
+
+.legal-acc .legal-section.collapsed .legal-body {
+    display: none;
+}
+
+.legal-acc .legal-body p,
+.legal-acc .legal-body li {
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--color-noir, #000);
+}
+.pro-form-info p{
+    font-size:14px;
+}
+/* Responsive */
+@media (max-width: 768px) {
+    .form-box .form-group {
+        gap: 6px;
+    }
+
+    .form-box .form-group input,
+    .form-box .form-group select,
+    .form-box .form-group textarea {
+        padding: 10px 12px;
+        font-size: 16px; /* évite le zoom iOS */
+    }
+
+    /* préserve l'espace du chevron (le raccourci padding ci-dessus écraserait padding-right) */
+    .form-box .form-group select {
+        padding-right: 36px;
+    }
+
+    .form-box .form-group label {
+        font-size: 10px;
+    }
+
+    .form-box .form-hint {
+        font-size: 10px;
+    }
+
+    .form-box .form-actions {
+        margin-top: 24px;
+    }
+}
+
+@media (max-width: 640px) {
+    .form-box .form-row {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* A11y */
+.form-box .form-group input:focus-visible,
+.form-box .form-group select:focus-visible,
+.form-box .form-group textarea:focus-visible {
+    outline: 2px solid var(--color-vert-persan, #0C524E);
+    outline-offset: 2px;
+}
+
+@media (max-width: 768px) {
+    .form-box .form-group {
+        gap: 6px;
+    }
+
+    .form-box .form-group input,
+    .form-box .form-group select,
+    .form-box .form-group textarea {
+        padding: 10px 12px;
+        font-size: 16px; /* évite le zoom iOS */
+    }
+
+    /* préserve l'espace du chevron (le raccourci padding ci-dessus écraserait padding-right) */
+    .form-box .form-group select {
+        padding-right: 36px;
+    }
+
+    .form-box .form-group label {
+        font-size: 10px;
+    }
+
+    .form-box .form-hint {
+        font-size: 10px;
+    }
+
+    .form-box .form-actions {
+        margin-top: 24px;
+    }
+}
+
+@media (max-width: 640px) {
+    .form-box .form-row {
+        grid-template-columns: 1fr;
+    }
+}
+
+.testimonial-placeholder h3 {
+    font-size: 30px;
+    line-height: 32px;
+}
+
+.form-box .form-group input:focus-visible,
+.form-box .form-group select:focus-visible,
+.form-box .form-group textarea:focus-visible {
+    outline: 2px solid var(--color-vert-persan, #0C524E);
+    outline-offset: 2px;
+}
+
+.pro-benefit-checklist {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: var(--color-noir, #000);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.85rem;
+    font-weight: 600;
+    flex-shrink: 0;
+}

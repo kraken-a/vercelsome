@@ -1,0 +1,36 @@
+:root {
+    --section-py: 110px;
+    --section-py-mobile: 80px;
+    --section-gap: 96px;
+}
+
+.cat-hero {
+    text-align: center;
+    padding: clamp(130px, 7vw, 72px) 0 0;
+}
+
+.cat-hero h1 {
+    font-family: "Yet Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: clamp(2rem, 4vw, 2.125rem);
+    line-height: 1.08;
+    letter-spacing: 0.005em;
+    color: var(--color-noir, #000);
+    margin: 0 auto;
+    max-width: 860px;
+}
+
+.cat-hero p {
+    max-width: 660px;
+    margin: 1.25rem auto 0;
+    color: var(--color-beige-fonce, #696761);
+    font-size: 1.15rem;
+    line-height: 1.6;
+}
+
+section {
+    padding: var(--section-py) 0;
+    border: none;
+    outline: none;
+    box-shadow: none;
+}

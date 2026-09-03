@@ -1,0 +1,242 @@
+/* ─── Auth pages (login, register, password-recover, password-reset) ── */
+
+.auth-page {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: calc(100vh - 120px);
+  padding-top: 120px;
+}
+
+/* Left: visual */
+.auth-visual {
+  background: url('/images/stock/oaksome-v8-ambiance-satori-1.jpg') center/cover;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  padding: 3rem;
+}
+.auth-visual::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.55), transparent);
+}
+.auth-visual .auth-quote {
+  position: relative;
+  z-index: 1;
+  max-width: 400px;
+}
+.auth-visual .auth-quote h3 {
+  color: #fff;
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin: 0 0 0.5rem;
+}
+.auth-visual .auth-quote p {
+  color: rgba(255,255,255,0.85);
+  font-size: 1rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Right: form */
+.auth-form-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem;
+}
+.auth-form {
+  max-width: 400px;
+  width: 100%;
+}
+.auth-form h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0 0 0.5rem;
+}
+.auth-form > p {
+  color: #000;
+  margin: 0 0 2rem;
+  font-size: 1rem;
+}
+
+/* Form fields */
+.form-group {
+  margin-bottom: 1.5rem;
+}
+.form-group label {
+  display: block;
+  font-size: 0.95rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+.form-group input {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border: 1.5px solid rgba(0,0,0,0.15);
+  font-size: 1rem;
+  font-family: inherit;
+  background: #fff;
+  transition: border-color 300ms ease;
+  box-sizing: border-box;
+}
+.form-group input:focus {
+  outline: none;
+  border-color: #0C524E;
+}
+.form-group input.error {
+  border-color: #c0392b;
+}
+.form-group .field-error {
+  font-size: 0.8rem;
+  color: #c0392b;
+  margin-top: 0.3rem;
+}
+
+/* Checkbox row */
+.form-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+.form-row label {
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  cursor: pointer;
+}
+.form-row a {
+  font-size: 0.9rem;
+  color: #0C524E;
+  text-decoration: none;
+}
+.form-row a:hover { text-decoration: underline; }
+
+/* Submit button */
+.auth-submit {
+  width: 100%;
+  text-align: center;
+}
+
+/* Divider */
+.auth-divider {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.5rem 0;
+  color: #696761;
+  font-size: 0.9rem;
+}
+.auth-divider::before,
+.auth-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: rgba(0,0,0,0.12);
+}
+
+/* Social buttons */
+.social-btn {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1.5px solid rgba(0,0,0,0.15);
+  background: #fff;
+  font-size: 0.95rem;
+  font-family: inherit;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  margin-bottom: 0.8rem;
+  transition: border-color 300ms ease;
+}
+.social-btn:hover { border-color: #0C524E; }
+
+/* Footer link */
+.auth-footer {
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 0.95rem;
+}
+.auth-footer a {
+  color: #0C524E;
+  font-weight: 600;
+  text-decoration: none;
+}
+.auth-footer a:hover { text-decoration: underline; }
+
+/* Error / success banners */
+.auth-banner {
+  padding: 0.8rem 1rem;
+  margin-bottom: 1.5rem;
+  font-size: 0.9rem;
+  border-left: 3px solid;
+}
+.auth-banner.error {
+  background: #fef2f2;
+  border-color: #c0392b;
+  color: #c0392b;
+}
+.auth-banner.success {
+  background: #f0fdf4;
+  border-color: #0C524E;
+  color: #0C524E;
+}
+
+/* 2-col form row (prénom + nom) */
+.form-row-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+/* Password strength bar */
+.pw-strength {
+  height: 3px;
+  background: rgba(0,0,0,0.1);
+  margin-top: 0.4rem;
+}
+.pw-strength .bar {
+  height: 100%;
+  width: 0%;
+  background: #C1FD48;
+  transition: width 300ms ease, background 300ms ease;
+}
+
+/* Checkbox rows */
+.checkbox-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+.checkbox-row input[type="checkbox"] {
+  margin-top: 0.2rem;
+  flex-shrink: 0;
+  width: auto;
+  cursor: pointer;
+}
+.checkbox-row label {
+  font-size: 0.9rem;
+  color: #000;
+  line-height: 1.4;
+  font-weight: 400;
+  cursor: pointer;
+}
+.checkbox-row label a {
+  color: #0C524E;
+  text-decoration: none;
+}
+.checkbox-row label a:hover { text-decoration: underline; }
+
+/* ─── Responsive ─────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .auth-page { grid-template-columns: 1fr; min-height: auto; padding-top: 64px; }
+  .auth-visual { display: none; }
+  .auth-form-wrap { padding: 2rem 1.5rem; }
+  .auth-form h1 { font-size: 1.6rem; }
+}

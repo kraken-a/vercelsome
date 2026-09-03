@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+  <t t-name="oaksome_backend.CustomAddToCartNotification">
+    <div class="o_notification position-fixed top-0 end-0 m-3 p-3 bg-white shadow rounded"
+         style="width: 320px; z-index: 1055;">
+      <div t-foreach="props.lines" t-as="line" t-key="line.id" class="d-flex mb-2">
+        <img class="me-2 rounded" t-att-src="line.image_url" alt="Product" width="64" height="64"/>
+          <div class="flex-grow-1">
+          <div class="fw-bold" t-out="getProductSummary(line)"/>
+              <div class="text-muted small" t-if="line.description" t-out="line.description"/>
+        </div>
+          <div class="text-end text-nowrap ms-2" t-out="getFormattedPrice(line)"/>
+      </div>
+        <a href="/shop/cart" class="btn btn-primary w-100 mt-2">
+        View Cart
+      </a>
+    </div>
+  </t>
+</templates>
